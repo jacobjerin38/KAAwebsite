@@ -190,10 +190,10 @@ export default function Hero() {
           </div>
 
           {/* Right Column: Parallax Card Deck */}
-          <div className="lg:col-span-6 relative flex justify-center items-center h-[520px] lg:h-auto mt-12 lg:mt-0">
+          <div className="lg:col-span-6 relative flex justify-center items-center min-h-[520px] sm:min-h-[600px] lg:min-h-[640px] mt-12 lg:mt-0">
             <motion.div
               style={{ y: yHero, scale: scaleHero }}
-              className="relative w-full max-w-[440px] aspect-[4/5] flex items-center justify-center"
+              className="relative w-full max-w-[560px] sm:max-w-[620px] aspect-[4/5] flex items-center justify-center"
             >
               {portalCards.map((panel, idx) => {
                 const isSelected = activePanel === idx;
@@ -216,7 +216,7 @@ export default function Hero() {
                         : "0 10px 30px rgba(0,0,0,0.5)"
                     }}
                     onClick={() => setActivePanel(idx)}
-                    className="absolute w-[90%] aspect-[4/3] rounded-[2rem] overflow-hidden p-2.5 bg-gradient-to-br from-neon-cyan/10 to-neon-purple/5 border shadow-2xl transition-all duration-500 cursor-pointer group select-none"
+                    className="absolute w-[96%] sm:w-[98%] aspect-[4/3] rounded-[2rem] overflow-hidden p-2.5 bg-gradient-to-br from-neon-cyan/10 to-neon-purple/5 border shadow-2xl transition-all duration-500 cursor-pointer group select-none"
                   >
                     <div className="relative rounded-[1.5rem] overflow-hidden w-full h-full bg-space-surface">
                       <Image src={panel.image} alt={panel.label} fill className="object-cover transition-transform duration-700 group-hover:scale-105" priority />
