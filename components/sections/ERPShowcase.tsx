@@ -6,7 +6,8 @@ import {
   Clock, Building2, FolderKanban, PieChart, Zap, Shield, ArrowRight,
   Check, TrendingUp, Activity, Cpu, Warehouse, UserCheck, BookOpen,
   Target, Bell, MessageSquare, Box, ScanBarcode, RotateCcw, AlertTriangle,
-  Layers, Calendar, ListChecks, Wallet, PhoneCall
+  Layers, Calendar, ListChecks, Wallet, PhoneCall, ShoppingBag, Factory,
+  Headphones, Megaphone, FileText, Coins, Trophy, Plane
 } from "lucide-react";
 import Image from "next/image";
 import ScrollReveal from "@/components/ui/ScrollReveal";
@@ -39,14 +40,251 @@ const benefits = [
   "Team Collaboration",
 ];
 
+const moduleCategories = [
+  { id: "all", label: "All Modules", count: 22 },
+  { id: "hr", label: "HR & Workforce", count: 10 },
+  { id: "finance", label: "Finance & Operations", count: 5 },
+  { id: "sales", label: "Sales & Growth", count: 4 },
+  { id: "workspace", label: "Workspace & Tools", count: 3 },
+];
+
+const allModules = [
+  {
+    id: "organisation",
+    icon: Building2,
+    emoji: "🏢",
+    name: "Organisation",
+    route: "/organisation",
+    category: "hr",
+    desc: "Structure, Masters, Roles, Workflows, Settings",
+    color: "#00F5FF"
+  },
+  {
+    id: "employees",
+    icon: Users,
+    emoji: "👥",
+    name: "Employees",
+    route: "/employees",
+    category: "hr",
+    desc: "Directory, Profiles, Geolocation, Immigration",
+    color: "#8B5CF6"
+  },
+  {
+    id: "attendance",
+    icon: Clock,
+    emoji: "⏱️",
+    name: "Attendance",
+    route: "/attendance",
+    category: "hr",
+    desc: "Daily/Monthly Logs, Shifts, Duty Roster, OT Rules",
+    color: "#00F5FF"
+  },
+  {
+    id: "leave",
+    icon: Calendar,
+    emoji: "📅",
+    name: "Leave",
+    route: "/leave",
+    category: "hr",
+    desc: "Leave Applications, Accruals, Balances, Calendar",
+    color: "#39FF14"
+  },
+  {
+    id: "payroll",
+    icon: DollarSign,
+    emoji: "💰",
+    name: "Payroll",
+    route: "/payroll",
+    category: "hr",
+    desc: "Salary Runs, WPS Export, Payslips, Settlements",
+    color: "#8B5CF6"
+  },
+  {
+    id: "essp",
+    icon: UserCheck,
+    emoji: "👤",
+    name: "ESSP",
+    route: "/essp",
+    category: "hr",
+    desc: "Self-Service, Punch In/Out, Missed Punch, Approvals",
+    color: "#00F5FF"
+  },
+  {
+    id: "pro",
+    icon: Shield,
+    emoji: "🛡️",
+    name: "PRO (Mandoob)",
+    route: "/pro",
+    category: "hr",
+    desc: "Govt Services, QID/Visa Renewals, Agent Tasks",
+    color: "#FF006E"
+  },
+  {
+    id: "crm",
+    icon: Target,
+    emoji: "🤝",
+    name: "CRM",
+    route: "/crm",
+    category: "sales",
+    desc: "Leads, Deals, Pipelines, Contacts, AI Finder",
+    color: "#FF006E"
+  },
+  {
+    id: "sales",
+    icon: ShoppingCart,
+    emoji: "🛒",
+    name: "Sales",
+    route: "/sales",
+    category: "sales",
+    desc: "Quotations, Sales Orders, Credit Limits, Invoices",
+    color: "#39FF14"
+  },
+  {
+    id: "accounting",
+    icon: BookOpen,
+    emoji: "🧮",
+    name: "Accounting",
+    route: "/accounting",
+    category: "finance",
+    desc: "Chart of Accounts, Ledgers, Payments, Financial Reports",
+    color: "#8B5CF6"
+  },
+  {
+    id: "inventory",
+    icon: Package,
+    emoji: "📦",
+    name: "Inventory",
+    route: "/inventory",
+    category: "finance",
+    desc: "Item Master, Warehouses, Stock Ledger, Reservations",
+    color: "#39FF14"
+  },
+  {
+    id: "procurement",
+    icon: ShoppingBag,
+    emoji: "🛍️",
+    name: "Procurement",
+    route: "/procurement",
+    category: "finance",
+    desc: "Requisitions, POs, GRNs, Vendor Bills",
+    color: "#00F5FF"
+  },
+  {
+    id: "manufacturing",
+    icon: Factory,
+    emoji: "🏭",
+    name: "Manufacturing",
+    route: "/manufacturing",
+    category: "finance",
+    desc: "BOM, Work Centers, Production Orders",
+    color: "#FF006E"
+  },
+  {
+    id: "projects",
+    icon: FolderKanban,
+    emoji: "📋",
+    name: "Projects",
+    route: "/projects",
+    category: "workspace",
+    desc: "Task Boards, Milestones, Timesheets",
+    color: "#EAB308"
+  },
+  {
+    id: "help_desk",
+    icon: Headphones,
+    emoji: "🎧",
+    name: "Help Desk",
+    route: "/help_desk",
+    category: "sales",
+    desc: "Support Tickets, SLAs, Escalations",
+    color: "#00F5FF"
+  },
+  {
+    id: "marketing",
+    icon: Megaphone,
+    emoji: "📢",
+    name: "Marketing",
+    route: "/marketing",
+    category: "sales",
+    desc: "Campaigns, Leads Automation, Analytics",
+    color: "#FF006E"
+  },
+  {
+    id: "documents",
+    icon: FileText,
+    emoji: "📄",
+    name: "Documents",
+    route: "/documents",
+    category: "workspace",
+    desc: "Policies, Contracts, Document Vault",
+    color: "#8B5CF6"
+  },
+  {
+    id: "recruitment",
+    icon: Briefcase,
+    emoji: "💼",
+    name: "Recruitment",
+    route: "/recruitment",
+    category: "hr",
+    desc: "ATS, Job Postings, Public Careers Portal (/careers)",
+    color: "#00F5FF"
+  },
+  {
+    id: "loans",
+    icon: Coins,
+    emoji: "💵",
+    name: "Loans & Benefits",
+    route: "/loans",
+    category: "hr",
+    desc: "Advances, Loan Repayments, Claims",
+    color: "#39FF14"
+  },
+  {
+    id: "performance",
+    icon: Trophy,
+    emoji: "🏆",
+    name: "Performance",
+    route: "/performance",
+    category: "hr",
+    desc: "Goals, OKRs, Appraisals",
+    color: "#EAB308"
+  },
+  {
+    id: "travel",
+    icon: Plane,
+    emoji: "✈️",
+    name: "Travel & Expenses",
+    route: "/travel",
+    category: "finance",
+    desc: "Trip Requests, Expense Claims, Receipts",
+    color: "#8B5CF6"
+  },
+  {
+    id: "chat",
+    icon: MessageSquare,
+    emoji: "💬",
+    name: "Team Chat",
+    route: "/chat",
+    category: "workspace",
+    desc: "Real-Time Direct & Channel Messaging",
+    color: "#00F5FF"
+  },
+];
+
 export default function ERPShowcase() {
   const [activeTab, setActiveTab] = useState("overview");
+  const [selectedCategory, setSelectedCategory] = useState("all");
+
   const scrollToContact = () => {
     const el = document.querySelector("#contact");
     if (el) el.scrollIntoView({ behavior: "smooth" });
   };
 
   const tabMotion = { initial: { opacity: 0, y: 15 }, animate: { opacity: 1, y: 0 }, exit: { opacity: 0, y: -15 }, transition: { duration: 0.35 } };
+
+  const filteredModules = selectedCategory === "all"
+    ? allModules
+    : allModules.filter(m => m.category === selectedCategory);
 
   return (
     <section id="erp" className="section-padding relative overflow-hidden bg-space-deep">
@@ -337,7 +575,96 @@ export default function ERPShowcase() {
             </ScrollReveal>
           </div>
         </div>
+
+        {/* 22-MODULE ENTERPRISE SUITE SECTION */}
+        <div className="pt-12 border-t border-neon-cyan/10">
+          <ScrollReveal>
+            <div className="text-center max-w-3xl mx-auto mb-10">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full mb-4 border border-neon-cyan/20 bg-neon-cyan/5">
+                <span className="w-2 h-2 rounded-full bg-neon-cyan animate-pulse" />
+                <span className="text-xs font-mono font-bold uppercase tracking-widest text-neon-cyan">
+                  Complete 22-Module Suite
+                </span>
+              </div>
+              <h3 className="font-display font-bold text-3xl sm:text-4xl text-white mb-4">
+                Explore All <span className="gradient-text-neon">22 Core ERP Modules</span>
+              </h3>
+              <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
+                Everything required to govern structure, workforce, finance, sales, manufacturing, and support — natively integrated into a unified portal.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          {/* Category Filter Pills */}
+          <ScrollReveal delay={0.1}>
+            <div className="flex flex-wrap justify-center gap-2.5 mb-10">
+              {moduleCategories.map((cat) => (
+                <button
+                  key={cat.id}
+                  onClick={() => setSelectedCategory(cat.id)}
+                  className="px-4 py-2 rounded-xl text-xs sm:text-sm font-display font-semibold transition-all duration-300 flex items-center gap-2"
+                  style={{
+                    backgroundColor: selectedCategory === cat.id ? "rgba(0, 245, 255, 0.12)" : "rgba(15, 15, 40, 0.4)",
+                    borderColor: selectedCategory === cat.id ? "#00F5FF" : "rgba(0, 245, 255, 0.08)",
+                    borderWidth: "1px",
+                    color: selectedCategory === cat.id ? "#FFFFFF" : "#94A3B8",
+                    boxShadow: selectedCategory === cat.id ? "0 0 15px rgba(0, 245, 255, 0.15)" : "none",
+                  }}
+                >
+                  <span>{cat.label}</span>
+                  <span className="px-2 py-0.5 rounded-full text-[10px] font-mono bg-neon-cyan/10 text-neon-cyan border border-neon-cyan/20">
+                    {cat.count}
+                  </span>
+                </button>
+              ))}
+            </div>
+          </ScrollReveal>
+
+          {/* 22 Modules Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+            {filteredModules.map((item, index) => {
+              const IconComp = item.icon;
+              return (
+                <ScrollReveal key={item.id} delay={index * 0.03}>
+                  <div className="h-full p-5 rounded-2xl holo-card-static border border-neon-cyan/8 bg-space-surface/50 backdrop-blur-md flex flex-col justify-between group hover:border-neon-cyan/25 transition-all duration-300">
+                    <div>
+                      {/* Top Row: Emoji + Icon + Route tag */}
+                      <div className="flex items-center justify-between mb-3.5">
+                        <div className="flex items-center gap-2.5">
+                          <span className="text-xl leading-none">{item.emoji}</span>
+                          <div className="w-8 h-8 rounded-lg bg-neon-cyan/8 border border-neon-cyan/15 flex items-center justify-center group-hover:scale-110 transition-transform">
+                            <IconComp size={16} style={{ color: item.color }} />
+                          </div>
+                        </div>
+                        <span className="text-[10px] font-mono px-2.5 py-1 rounded-md bg-space-void/80 text-neon-cyan border border-neon-cyan/20 font-medium">
+                          {item.route}
+                        </span>
+                      </div>
+
+                      {/* Title */}
+                      <h4 className="font-display font-bold text-base text-white mb-2 group-hover:text-neon-cyan transition-colors">
+                        {item.name}
+                      </h4>
+
+                      {/* Features / Breakdown */}
+                      <p className="text-xs text-slate-400 leading-relaxed">
+                        {item.desc}
+                      </p>
+                    </div>
+
+                    <div className="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-[11px] font-mono text-slate-500 group-hover:text-slate-300">
+                      <span>Module Ready</span>
+                      <ArrowRight size={12} className="text-neon-cyan opacity-0 group-hover:opacity-100 transform -translate-x-1 group-hover:translate-x-0 transition-all" />
+                    </div>
+                  </div>
+                </ScrollReveal>
+              );
+            })}
+          </div>
+        </div>
+
       </div>
     </section>
   );
 }
+
