@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Phone, Sun, Moon } from "lucide-react";
 import Image from "next/image";
@@ -17,12 +17,31 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeLink, setActiveLink] = useState("Home");
   const [theme, setTheme] = useState<"dark" | "light">("dark");
+  const menuToggleRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 10);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    if (!mobileOpen) return;
+    const originalOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    document.querySelector<HTMLButtonElement>("#mobile-navigation button")?.focus();
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setMobileOpen(false);
+        menuToggleRef.current?.focus();
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.body.style.overflow = originalOverflow;
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [mobileOpen]);
 
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme") as "dark" | "light" | null;
@@ -168,11 +187,12 @@ export default function Navbar() {
                 {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
               </button>
               <button
+                ref={menuToggleRef}
                 className="p-2.5 rounded-lg transition-colors hover:bg-neon-cyan/5 border border-neon-cyan/10 text-slate-400"
                 onClick={() => setMobileOpen(!mobileOpen)}
                 aria-label="Toggle menu"
                 aria-expanded={mobileOpen}
-                aria-controls="mobile-navigation"
+                aria-controls={mobileOpen ? "mobile-navigation" : undefined}
               >
                 {mobileOpen ? (
                   <X size={18} className="text-neon-cyan" />
@@ -195,6 +215,8 @@ export default function Navbar() {
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
             id="mobile-navigation"
             className="fixed inset-0 z-40 md:hidden pt-16"
+            role="navigation"
+            aria-label="Mobile navigation"
             style={{
               background: "rgba(3, 0, 20, 0.98)",
               backdropFilter: "blur(24px)",

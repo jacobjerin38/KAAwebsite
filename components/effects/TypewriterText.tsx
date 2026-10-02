@@ -1,5 +1,6 @@
 "use client";
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
+import { useReducedMotion } from "framer-motion";
 
 interface TypewriterTextProps {
   texts: string[];
@@ -18,10 +19,12 @@ export default function TypewriterText({
   pauseTime = 2000,
   cursor = true,
 }: TypewriterTextProps) {
+  const prefersReducedMotion = useReducedMotion();
   const [displayText, setDisplayText] = useState("");
   const [textIndex, setTextIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
+  const pauseTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const tick = useCallback(() => {
     const currentText = texts[textIndex];
@@ -31,7 +34,7 @@ export default function TypewriterText({
         setDisplayText(currentText.substring(0, charIndex + 1));
         setCharIndex((prev) => prev + 1);
       } else {
-        setTimeout(() => setIsDeleting(true), pauseTime);
+        pauseTimeoutRef.current = setTimeout(() => setIsDeleting(true), pauseTime);
         return;
       }
     } else {
@@ -46,14 +49,18 @@ export default function TypewriterText({
   }, [charIndex, isDeleting, textIndex, texts, pauseTime]);
 
   useEffect(() => {
+    if (prefersReducedMotion) return;
     const timeout = setTimeout(tick, isDeleting ? deleteSpeed : speed);
-    return () => clearTimeout(timeout);
-  }, [tick, isDeleting, deleteSpeed, speed]);
+    return () => {
+      clearTimeout(timeout);
+      if (pauseTimeoutRef.current) clearTimeout(pauseTimeoutRef.current);
+    };
+  }, [tick, isDeleting, deleteSpeed, speed, prefersReducedMotion]);
 
   return (
     <span className={`font-mono ${className}`}>
-      {displayText}
-      {cursor && (
+      {prefersReducedMotion ? texts[0] : displayText}
+      {cursor && !prefersReducedMotion && (
         <span
           className="inline-block w-[2px] h-[1em] ml-1 align-middle animate-blink-caret"
           style={{

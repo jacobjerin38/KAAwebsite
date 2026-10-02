@@ -9,7 +9,7 @@
   /* Burgundy and blush accents */
   --neon-cyan: #D58A9B;
   --neon-purple: #B76E82;
-  --neon-magenta: #76243C;
+  --neon-magenta: #C56D82;
   --neon-green: #CCB38F;
   --neon-pink: #B76075;
   --brand-wine: #76243C;
@@ -23,9 +23,9 @@
   --space-card: rgba(23, 27, 39, 0.6);
 
   /* Typography */
-  --font-display: 'Space Grotesk', system-ui, sans-serif;
-  --font-body: 'Inter', system-ui, sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
+  --font-display: 'Space Grotesk', 'Avenir Next', 'Segoe UI', system-ui, sans-serif;
+  --font-body: 'Inter', Arial, 'Segoe UI', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', Consolas, 'SFMono-Regular', monospace;
 
   /* Animated gradient angle */
   --border-angle: 0deg;
@@ -514,7 +514,7 @@ html.light ::-webkit-scrollbar-track {
 }
 
 html.light ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #B76E82, #76243C);
+  background: linear-gradient(180deg, #B76E82, #C56D82);
 }
 
 html.light section {
@@ -587,7 +587,7 @@ html.light textarea:focus {
 }
 
 html.light .neon-text-cyan {
-  color: #76243C !important;
+  color: #C56D82 !important;
   text-shadow: none !important;
 }
 
@@ -597,7 +597,7 @@ html.light .neon-text-purple {
 }
 
 html.light .neon-text-magenta {
-  color: #76243C !important;
+  color: #C56D82 !important;
   text-shadow: none !important;
 }
 
@@ -638,4 +638,35 @@ html.light div[class*="fixed"][class*="z-40"][class*="md:hidden"] {
 }
 html.light div[class*="fixed"][class*="z-40"][class*="md:hidden"] button {
   color: #4B5563 !important;
+}
+
+.brand-surface-light {
+  background: var(--brand-cream) !important;
+  color: #202331 !important;
+}
+
+.brand-surface-light h1,
+.brand-surface-light h2,
+.brand-surface-light h3,
+.brand-surface-light h4,
+.brand-surface-light .text-white {
+  color: #202331 !important;
+}
+
+.brand-surface-light .text-slate-300,
+.brand-surface-light .text-slate-400,
+.brand-surface-light .text-slate-500,
+.brand-surface-light .text-slate-600 {
+  color: #55535A !important;
+}
+
+.brand-surface-light .text-neon-cyan,
+.brand-surface-light .text-neon-magenta {
+  color: #76243C !important;
+}
+
+.brand-surface-light .holo-card-static {
+  background: rgba(255, 255, 255, 0.78);
+  border-color: rgba(118, 36, 60, 0.12);
+  box-shadow: 0 8px 28px rgba(42, 24, 30, 0.06);
 }

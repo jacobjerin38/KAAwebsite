@@ -7,7 +7,7 @@ const problems = [
   {
     id: 1,
     icon: TrendingUp,
-    accent: "#76243C",
+    accent: "#C56D82",
     headline: "You're Scaling But Your Systems Aren't",
     points: ["More orders", "More teams", "More locations"],
     punchline: "Growth without the right system doesn't scale — it breaks. Your business has outgrown the old way.",
@@ -43,7 +43,7 @@ const problems = [
   {
     id: 5,
     icon: Database,
-    accent: "#76243C",
+    accent: "#C56D82",
     headline: "Your Data Lives In 10 Different Places",
     points: ["Excel here", "WhatsApp there", "Register in account", "Another file on someone's laptop"],
     punchline: "When no one knows which number is right, your business is already losing. Sounds familiar?",

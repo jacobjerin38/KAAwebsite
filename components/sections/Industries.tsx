@@ -5,11 +5,11 @@ import { Heart, ShoppingBag, Factory, Truck, GraduationCap, Landmark, HardHat, U
 const industries = [
   { name: "Healthcare", icon: Heart, accent: "#D58A9B" },
   { name: "Retail", icon: ShoppingBag, accent: "#B76E82" },
-  { name: "Manufacturing", icon: Factory, accent: "#76243C" },
+  { name: "Manufacturing", icon: Factory, accent: "#C56D82" },
   { name: "Logistics", icon: Truck, accent: "#CCB38F" },
   { name: "Education", icon: GraduationCap, accent: "#D58A9B" },
   { name: "Finance", icon: Landmark, accent: "#B76E82" },
-  { name: "Construction", icon: HardHat, accent: "#76243C" },
+  { name: "Construction", icon: HardHat, accent: "#C56D82" },
   { name: "Hospitality", icon: UtensilsCrossed, accent: "#CCB38F" },
   { name: "Technology", icon: Cpu, accent: "#D58A9B" },
 ];

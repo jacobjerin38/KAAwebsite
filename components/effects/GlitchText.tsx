@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect, useRef, ReactNode } from "react";
+import { useReducedMotion } from "framer-motion";
 
 interface GlitchTextProps {
   children: ReactNode;
@@ -16,15 +17,17 @@ export default function GlitchText({
   active = true,
   interval = 5000,
 }: GlitchTextProps) {
+  const prefersReducedMotion = useReducedMotion();
   const [glitching, setGlitching] = useState(false);
   const timeoutRef = useRef<NodeJS.Timeout>();
+  const glitchEndTimeoutRef = useRef<NodeJS.Timeout>();
 
   useEffect(() => {
-    if (!active) return;
+    if (!active || prefersReducedMotion) return;
 
     const triggerGlitch = () => {
       setGlitching(true);
-      setTimeout(() => setGlitching(false), 200);
+      glitchEndTimeoutRef.current = setTimeout(() => setGlitching(false), 200);
       timeoutRef.current = setTimeout(
         triggerGlitch,
         interval + Math.random() * 3000
@@ -34,8 +37,9 @@ export default function GlitchText({
     timeoutRef.current = setTimeout(triggerGlitch, 2000 + Math.random() * 3000);
     return () => {
       if (timeoutRef.current) clearTimeout(timeoutRef.current);
+      if (glitchEndTimeoutRef.current) clearTimeout(glitchEndTimeoutRef.current);
     };
-  }, [active, interval]);
+  }, [active, interval, prefersReducedMotion]);
 
   return (
     <span
@@ -49,7 +53,7 @@ export default function GlitchText({
           <span
             className="absolute inset-0 z-20"
             style={{
-              color: "#76243C",
+              color: "#C56D82",
               animation: "glitch-1 0.2s linear",
               opacity: 0.8,
             }}

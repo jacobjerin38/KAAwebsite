@@ -13,7 +13,7 @@ interface HolographicCardProps {
 export default function HolographicCard({
   children,
   className = "",
-  glowColor = "0, 245, 255",
+  glowColor = "213, 138, 155",
   intensity = 1,
   disabled = false,
 }: HolographicCardProps) {

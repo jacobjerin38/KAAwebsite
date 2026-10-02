@@ -9,15 +9,22 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Inter", "system-ui", "sans-serif"],
-        display: ["Space Grotesk", "system-ui", "sans-serif"],
-        mono: ["JetBrains Mono", "monospace"],
+        sans: ["Inter", "Arial", "Segoe UI", "system-ui", "sans-serif"],
+        display: ["Space Grotesk", "Avenir Next", "Segoe UI", "system-ui", "sans-serif"],
+        mono: ["JetBrains Mono", "Consolas", "SFMono-Regular", "monospace"],
       },
       colors: {
+        brand: {
+          navy: "#0D111B",
+          wine: "#76243C",
+          rose: "#C56D82",
+          blush: "#D58A9B",
+          cream: "#F4EEE7",
+        },
         neon: {
           cyan: "#D58A9B",
           purple: "#B76E82",
-          magenta: "#76243C",
+          magenta: "#C56D82",
           green: "#CCB38F",
           pink: "#E91E63",
         },

@@ -7,7 +7,7 @@ import NeonBorder from "@/components/effects/NeonBorder";
 
 const stats = [
   { value: "Doha", label: "Qatar Headquarters" },
-  { value: "Kochi", label: "Engineering Center" },
+  { value: "Kerala", label: "Engineering Center" },
   { value: "24/7", label: "GCC Support" }
 ];
 
@@ -54,7 +54,7 @@ export default function About() {
 
             <ScrollReveal delay={0.2}>
               <p className="text-base md:text-lg leading-relaxed mb-6 text-slate-400">
-                KAA Software and Technologies operates a high-performance <strong className="text-white">dual-location model</strong> to serve our enterprise clients. With our strategic corporate headquarters based in <strong className="text-white">Doha, Qatar</strong>, and our advanced software engineering and AI hub situated in <strong className="text-white">Kochi, India</strong>, we deliver cutting-edge IT systems and smart automation workflows with rapid local turnaround times.
+                KAA Software and Technologies operates a high-performance <strong className="text-white">dual-location model</strong> to serve our enterprise clients. With our strategic corporate headquarters based in <strong className="text-white">Doha, Qatar</strong>, and our advanced software engineering and AI hub situated in <strong className="text-white">Kerala, India</strong>, we deliver cutting-edge IT systems and smart automation workflows with rapid local turnaround times.
               </p>
               <p className="text-sm sm:text-base leading-relaxed mb-8 text-slate-400">
                 While our engineering capability scales globally, our core market operations focus heavily on <strong className="text-white">Qatar and other GCC nations</strong> as well as the <strong className="text-white">Indian subcontinent</strong>, ensuring high-availability support and strict compliance with local WPS labor standards and security protocols.
@@ -63,7 +63,7 @@ export default function About() {
 
             <ScrollReveal delay={0.3}>
               <div className="grid sm:grid-cols-2 gap-4 mb-10">
-                <HolographicCard glowColor="255, 0, 110" className="p-5">
+                <HolographicCard glowColor="197, 109, 130" className="p-5">
                   <div className="flex items-center gap-3 mb-3">
                     <div className="w-8 h-8 rounded-lg bg-neon-magenta/10 flex items-center justify-center border border-neon-magenta/20">
                       <MapPin size={16} className="text-neon-magenta" />
@@ -76,14 +76,14 @@ export default function About() {
                   </p>
                 </HolographicCard>
 
-                <HolographicCard glowColor="139, 92, 246" className="p-5">
+                <HolographicCard glowColor="183, 110, 130" className="p-5">
                   <div className="flex items-center gap-3 mb-3">
                     <div className="w-8 h-8 rounded-lg bg-neon-purple/10 flex items-center justify-center border border-neon-purple/20">
                       <Terminal size={16} className="text-neon-purple" />
                     </div>
                     <span className="text-sm font-display font-bold text-white uppercase tracking-wider">Development Center</span>
                   </div>
-                  <div className="text-[11px] font-mono font-bold text-neon-purple/80 uppercase mb-2">Kochi (Infopark IDC)</div>
+                  <div className="text-[11px] font-mono font-bold text-neon-purple/80 uppercase mb-2">Kerala, India (IDC)</div>
                   <p className="text-xs text-slate-400 leading-relaxed group-hover:text-white/95 transition-colors">
                     Spearheads deep-tech full-stack engineering, core WPS ERP compilation, LLM artificial intelligence modeling, and digital branding execution.
                   </p>
@@ -98,7 +98,7 @@ export default function About() {
                 </button>
                 <div className="flex items-center gap-2 text-xs font-mono text-slate-500">
                   <Globe size={14} className="text-neon-cyan" />
-                  <span>Doha / Kochi / Global</span>
+                  <span>Doha / Kerala / Global</span>
                 </div>
               </div>
             </ScrollReveal>

@@ -9,7 +9,7 @@ const pillars = [
     title: "Reliable & Secure",
     subtitle: "Enterprise-grade protection",
     points: ["Security-first architecture", "Data protection", "Secure cloud solutions"],
-    accent: "#76243C",
+    accent: "#C56D82",
     description: "Every KAA system is built with security-first architecture. Your data stays protected, backed up, and compliant.",
   },
   {
@@ -173,7 +173,7 @@ export default function WhyChooseUs() {
 
             <div className="grid grid-cols-2 gap-4">
               {[
-                { icon: Shield, label: "Reliable & Secure", sub: "Security-first technology", accent: "#76243C" },
+                { icon: Shield, label: "Reliable & Secure", sub: "Security-first technology", accent: "#C56D82" },
                 { icon: TrendingUp, label: "Ready to Scale", sub: "Designed around your growth", accent: "#D58A9B" },
                 { icon: Users, label: "Connected Teams", sub: "One platform across departments", accent: "#B76E82" },
                 { icon: MessageCircle, label: "24/7 IT Support", sub: "Support for systems and infrastructure", accent: "#CCB38F" },

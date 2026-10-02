@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
+import { motion, AnimatePresence, useScroll, useTransform, useReducedMotion } from "framer-motion";
 import { ArrowRight, Layers, Cpu, ShieldCheck, Sparkles } from "lucide-react";
 import Image from "next/image";
 import TypewriterText from "@/components/effects/TypewriterText";
@@ -8,13 +8,13 @@ import TypewriterText from "@/components/effects/TypewriterText";
 const portalCards = [
   {
     id: 0, num: "01", label: "Enterprise Systems & E-Commerce",
-    sub: "Doha Corporate HQ Team", image: "/hero-team.png", accent: "#76243C",
+    sub: "Doha Corporate HQ Team", image: "/hero-team.png", accent: "#C56D82",
     icon: Layers,
     desc: "Bespoke ERP systems, Qatar WPS-compliant HRMS & payroll, and premium e-commerce setups for personal brands."
   },
   {
     id: 1, num: "02", label: "AI & Workflow Automation",
-    sub: "Kochi Infopark AI Lab", image: "/ai-automation.png", accent: "#B76E82",
+    sub: "Kerala, India AI Lab", image: "/ai-automation.png", accent: "#B76E82",
     icon: Cpu,
     desc: "Bespoke LLM integrations, robotic process automation pipelines, database syncs, and intelligent neural assistants."
   },
@@ -28,6 +28,7 @@ const portalCards = [
 
 export default function Hero() {
   const [activePanel, setActivePanel] = useState(0);
+  const prefersReducedMotion = useReducedMotion();
   const { scrollY } = useScroll();
 
   const yHero = useTransform(scrollY, [0, 600], [0, 80]);
@@ -120,7 +121,7 @@ export default function Hero() {
             {/* Panel Selector */}
             <motion.div
               style={{ opacity: opacityDial }}
-              className="hidden sm:flex flex-col gap-3 mb-8 max-w-md"
+              className="hidden sm:flex order-2 flex-col gap-3 mb-8 max-w-md"
             >
               {portalCards.map((panel, idx) => {
                 const PanelIcon = panel.icon;
@@ -129,6 +130,7 @@ export default function Hero() {
                   <button
                     key={panel.id}
                     onClick={() => setActivePanel(idx)}
+                    aria-pressed={isSelected}
                     className="flex items-center gap-4 p-3.5 rounded-2xl border text-left transition-all duration-300 backdrop-blur-md relative cursor-pointer group"
                     style={{
                       backgroundColor: isSelected ? "rgba(213,138,155,0.03)" : "rgba(255,255,255,0.01)",
@@ -170,7 +172,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.35 }}
-              className="flex flex-wrap items-center justify-center lg:justify-start gap-4"
+              className="order-1 flex flex-wrap items-center justify-center lg:justify-start gap-4"
             >
               <button onClick={() => scrollTo("#contact")} className="btn-neon group">
                 <span>Explore Solutions</span>
@@ -185,7 +187,7 @@ export default function Hero() {
           {/* Right Column: Parallax Card Deck */}
           <div className="lg:col-span-6 relative flex justify-center items-center min-h-[520px] sm:min-h-[600px] lg:min-h-[640px] mt-12 lg:mt-0">
             <motion.div
-              style={{ y: yHero, scale: scaleHero }}
+              style={{ y: prefersReducedMotion ? 0 : yHero, scale: prefersReducedMotion ? 1 : scaleHero }}
               className="relative w-full max-w-[560px] sm:max-w-[620px] aspect-[4/5] flex items-center justify-center"
             >
               {portalCards.map((panel, idx) => {
@@ -202,7 +204,11 @@ export default function Hero() {
                   <motion.div
                     key={panel.id}
                     style={{
-                      y: yOffset, rotate: rotOffset, scale: scaleVal, x: translateX, zIndex,
+                      y: prefersReducedMotion ? 0 : yOffset,
+                      rotate: prefersReducedMotion ? 0 : rotOffset,
+                      scale: prefersReducedMotion ? (isSelected ? 1.02 : 0.94) : scaleVal,
+                      x: prefersReducedMotion ? (isSelected ? 0 : translateX) : translateX,
+                      zIndex,
                       borderColor: isSelected ? panel.accent : "rgba(213, 138, 155, 0.08)",
                       boxShadow: isSelected
                         ? `0 20px 50px rgba(0,0,0,0.6), 0 0 30px ${panel.accent}20`

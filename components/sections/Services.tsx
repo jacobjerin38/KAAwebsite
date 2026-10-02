@@ -12,7 +12,7 @@ const strategicVerticals = [
     title: "Enterprise ERP & Custom Web Platforms",
     subtitle: "Unified management systems & high-converting brand platforms",
     desc: "We construct bespoke business systems and gorgeous websites designed to scale. From Qatar WPS-compliant HRMS & payroll software to high-end e-commerce sites for personal brands and premium corporate platforms.",
-    accent: "#76243C", image: "/kaa-screenshot.jpg",
+    accent: "#C56D82", image: "/kaa-screenshot.jpg",
     tags: ["Enterprise ERP", "WPS HRMS", "E-Commerce", "Personal Brands"],
     icon: Layers,
     bullets: ["Qatar WPS-Compliant HR & Automated Payroll", "Real-Time Inventory, Procurement & Ledger Hub", "Premium E-Commerce Platforms for Personal Brands", "Bespoke Corporate Web App Architecture"]
@@ -47,7 +47,7 @@ const foundationalPillars = [
     stat: "Security-first protection.",
     statSub: "One mistake shouldn’t cost you everything.",
     features: ["Firewall", "Anti-Virus", "Email Security", "Threat Detection", "Data Protection", "Secure Cloud"],
-    accent: "#76243C",
+    accent: "#C56D82",
     isCyber: true,
   },
   {
@@ -179,7 +179,7 @@ export default function Services() {
               <div className="lg:col-span-6 relative flex justify-center items-center">
                 <div className="absolute inset-0 rounded-[2rem] opacity-25 blur-3xl pointer-events-none transform scale-95"
                   style={{ background: `radial-gradient(circle, ${activeVertical.accent}30 0%, rgba(183,110,130,0.08) 70%)` }} />
-                <HolographicCard className="w-full max-w-[500px]" glowColor={activeVertical.accent.replace("#", "").match(/.{2}/g)?.map(h => parseInt(h, 16)).join(", ") || "0, 245, 255"}>
+                <HolographicCard className="w-full max-w-[500px]" glowColor={activeVertical.accent.replace("#", "").match(/.{2}/g)?.map(h => parseInt(h, 16)).join(", ") || "213, 138, 155"}>
                   <div className="relative rounded-[20px] overflow-hidden aspect-[4/3] w-full bg-space-surface">
                     <Image src={activeVertical.image} alt={activeVertical.title} fill className="object-cover transition-transform duration-700 hover:scale-105" />
                     <div className="absolute inset-0 rounded-[20px] border border-neon-cyan/5 pointer-events-none z-20" />

@@ -27,7 +27,7 @@ const modules = [
   { icon: DollarSign, label: "Payroll", color: "#B76E82" },
   { icon: Briefcase, label: "CRM", color: "#D58A9B" },
   { icon: ShoppingCart, label: "Sales", color: "#CCB38F" },
-  { icon: Package, label: "Inventory", color: "#76243C" },
+  { icon: Package, label: "Inventory", color: "#C56D82" },
   { icon: BarChart3, label: "Finance", color: "#B76E82" },
 ];
 
@@ -110,7 +110,7 @@ const allModules = [
     name: "PRO (Mandoob)",
     category: "hr",
     desc: "Govt Services, QID/Visa Renewals, Agent Tasks",
-    color: "#76243C"
+    color: "#C56D82"
   },
   {
     id: "crm",
@@ -119,7 +119,7 @@ const allModules = [
     name: "CRM",
     category: "sales",
     desc: "Leads, Deals, Pipelines, Contacts, AI Finder",
-    color: "#76243C"
+    color: "#C56D82"
   },
   {
     id: "sales",
@@ -164,7 +164,7 @@ const allModules = [
     name: "Manufacturing",
     category: "finance",
     desc: "BOM, Work Centers, Production Orders",
-    color: "#76243C"
+    color: "#C56D82"
   },
   {
     id: "projects",
@@ -191,7 +191,7 @@ const allModules = [
     name: "Marketing",
     category: "sales",
     desc: "Campaigns, Leads Automation, Analytics",
-    color: "#76243C"
+    color: "#C56D82"
   },
   {
     id: "documents",
@@ -289,6 +289,7 @@ export default function ERPShowcase() {
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
+                aria-pressed={activeTab === tab.id}
                 className="px-5 py-2.5 rounded-xl text-sm font-display font-semibold transition-all duration-300 relative overflow-hidden"
                 style={{
                   background: activeTab === tab.id ? "rgba(213,138,155,0.08)" : "rgba(213,138,155,0.02)",
@@ -323,8 +324,9 @@ export default function ERPShowcase() {
                     <span className="text-[10px] text-slate-500 ml-4 font-mono">erp.kaatechnologies.qa/dashboard</span>
                   </div>
                   <div className="relative aspect-[16/10] rounded-b-xl overflow-hidden bg-space-surface">
-                    <Image src="/kaa-screenshot.jpg" alt="KAA ERP Dashboard" fill className="object-cover" />
+                    <Image src="/kaa-screenshot.jpg" alt="KAA ERP product interface preview" fill className="object-cover" />
                     <div className="absolute inset-0 bg-space-void/5 pointer-events-none" />
+                    <span className="absolute right-3 top-3 z-10 rounded-full border border-white/15 bg-black/65 px-3 py-1 text-[10px] font-medium text-white backdrop-blur-sm">Product interface preview</span>
                   </div>
                   <div className="mt-4 grid grid-cols-3 gap-3">
                     {["No More Data Gaps","No More Miscommunication","Real-Time Data"].map((b) => (

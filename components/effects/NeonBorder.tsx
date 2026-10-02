@@ -31,7 +31,7 @@ export default function NeonBorder({
       <div
         className="relative rounded-[inherit]"
         style={{
-          background: "linear-gradient(135deg, rgba(10, 10, 26, 0.95) 0%, rgba(17, 17, 40, 0.9) 100%)",
+          background: "linear-gradient(135deg, rgba(13, 17, 27, 0.95) 0%, rgba(32, 36, 49, 0.9) 100%)",
           borderRadius: "inherit",
         }}
       >
