@@ -181,7 +181,7 @@ export default function Services() {
                   style={{ background: `radial-gradient(circle, ${activeVertical.accent}30 0%, rgba(139,92,246,0.08) 70%)` }} />
                 <HolographicCard className="w-full max-w-[500px]" glowColor={activeVertical.accent.replace("#", "").match(/.{2}/g)?.map(h => parseInt(h, 16)).join(", ") || "0, 245, 255"}>
                   <div className="relative rounded-[20px] overflow-hidden aspect-[4/3] w-full bg-space-surface">
-                    <Image src={activeVertical.image} alt={activeVertical.title} fill className="object-cover transition-transform duration-700 hover:scale-105" priority />
+                    <Image src={activeVertical.image} alt={activeVertical.title} fill className="object-cover transition-transform duration-700 hover:scale-105" />
                     <div className="absolute inset-0 rounded-[20px] border border-neon-cyan/5 pointer-events-none z-20" />
                   </div>
                 </HolographicCard>

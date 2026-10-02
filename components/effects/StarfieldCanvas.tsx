@@ -16,9 +16,10 @@ export default function StarfieldCanvas() {
   const mouseRef = useRef({ x: 0, y: 0 });
   const particlesRef = useRef<Particle[]>([]);
   const animRef = useRef<number>(0);
+  const lastFrameRef = useRef(0);
 
   const initParticles = useCallback((w: number, h: number) => {
-    const count = window.innerWidth < 768 ? 80 : 150;
+    const count = window.innerWidth < 768 ? 36 : 120;
     const particles: Particle[] = [];
     for (let i = 0; i < count; i++) {
       particles.push({
@@ -55,10 +56,17 @@ export default function StarfieldCanvas() {
     const onMouseMove = (e: MouseEvent) => {
       mouseRef.current = { x: e.clientX, y: e.clientY };
     };
-    window.addEventListener("mousemove", onMouseMove);
+    const isMobile = window.matchMedia("(max-width: 767px)").matches;
+    if (!isMobile) window.addEventListener("mousemove", onMouseMove);
 
-    const animate = () => {
+    const animate = (timestamp: number) => {
       if (!ctx || !canvas) return;
+      if (document.hidden) return;
+      if (isMobile && timestamp - lastFrameRef.current < 1000 / 30) {
+        animRef.current = requestAnimationFrame(animate);
+        return;
+      }
+      lastFrameRef.current = timestamp;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       const mx = mouseRef.current.x;
@@ -66,13 +74,15 @@ export default function StarfieldCanvas() {
 
       particlesRef.current.forEach((p) => {
         // Mouse parallax influence
-        const dx = mx - p.x;
-        const dy = my - p.y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < 200) {
-          const force = (200 - dist) / 200 * 0.02;
-          p.vx -= dx * force * 0.01;
-          p.vy -= dy * force * 0.01;
+        if (!isMobile) {
+          const dx = mx - p.x;
+          const dy = my - p.y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < 200) {
+            const force = (200 - dist) / 200 * 0.02;
+            p.vx -= dx * force * 0.01;
+            p.vy -= dy * force * 0.01;
+          }
         }
 
         p.x += p.vx;
@@ -121,12 +131,21 @@ export default function StarfieldCanvas() {
       animRef.current = requestAnimationFrame(animate);
     };
 
-    animate();
+    const onVisibilityChange = () => {
+      cancelAnimationFrame(animRef.current);
+      if (!document.hidden) {
+        lastFrameRef.current = 0;
+        animRef.current = requestAnimationFrame(animate);
+      }
+    };
+    document.addEventListener("visibilitychange", onVisibilityChange);
+    animRef.current = requestAnimationFrame(animate);
 
     return () => {
       cancelAnimationFrame(animRef.current);
       window.removeEventListener("resize", resize);
-      window.removeEventListener("mousemove", onMouseMove);
+      if (!isMobile) window.removeEventListener("mousemove", onMouseMove);
+      document.removeEventListener("visibilitychange", onVisibilityChange);
     };
   }, [initParticles]);
 

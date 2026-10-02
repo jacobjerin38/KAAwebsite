@@ -114,7 +114,6 @@ export default function About() {
                   alt="KAA Technologies Global Offices"
                   fill
                   className="object-cover transition-transform duration-700 hover:scale-105"
-                  priority
                 />
                 <div className="absolute top-4 left-4 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/70 backdrop-blur-md border border-neon-cyan/10 z-20">
                   <Building2 size={10} className="text-neon-cyan" />

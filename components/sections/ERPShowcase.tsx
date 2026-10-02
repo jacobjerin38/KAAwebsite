@@ -344,7 +344,7 @@ export default function ERPShowcase() {
                     <span className="text-[10px] text-slate-500 ml-4 font-mono">erp.kaatechnologies.qa/dashboard</span>
                   </div>
                   <div className="relative aspect-[16/10] rounded-b-xl overflow-hidden bg-space-surface">
-                    <Image src="/kaa-screenshot.jpg" alt="KAA ERP Dashboard" fill className="object-cover" priority />
+                    <Image src="/kaa-screenshot.jpg" alt="KAA ERP Dashboard" fill className="object-cover" />
                     <div className="absolute inset-0 bg-space-void/5 pointer-events-none" />
                   </div>
                   <div className="mt-4 grid grid-cols-3 gap-3">

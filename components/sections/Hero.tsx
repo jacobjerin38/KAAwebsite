@@ -219,7 +219,7 @@ export default function Hero() {
                     className="absolute w-[96%] sm:w-[98%] aspect-[4/3] rounded-[2rem] overflow-hidden p-2.5 bg-gradient-to-br from-neon-cyan/10 to-neon-purple/5 border shadow-2xl transition-all duration-500 cursor-pointer group select-none"
                   >
                     <div className="relative rounded-[1.5rem] overflow-hidden w-full h-full bg-space-surface">
-                      <Image src={panel.image} alt={panel.label} fill className="object-cover transition-transform duration-700 group-hover:scale-105" priority />
+                      <Image src={panel.image} alt={panel.label} fill className="object-cover transition-transform duration-700 group-hover:scale-105" priority={idx === 0} />
 
                       {panel.id === 0 && (
                         <motion.div
