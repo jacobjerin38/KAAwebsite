@@ -12,7 +12,7 @@ interface GlitchTextProps {
 export default function GlitchText({
   children,
   className = "",
-  color = "#00F5FF",
+  color = "#D58A9B",
   active = true,
   interval = 5000,
 }: GlitchTextProps) {
@@ -49,7 +49,7 @@ export default function GlitchText({
           <span
             className="absolute inset-0 z-20"
             style={{
-              color: "#FF006E",
+              color: "#76243C",
               animation: "glitch-1 0.2s linear",
               opacity: 0.8,
             }}
@@ -60,7 +60,7 @@ export default function GlitchText({
           <span
             className="absolute inset-0 z-20"
             style={{
-              color: "#8B5CF6",
+              color: "#B76E82",
               animation: "glitch-2 0.2s linear",
               opacity: 0.8,
             }}

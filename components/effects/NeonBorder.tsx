@@ -22,7 +22,7 @@ export default function NeonBorder({
       <div
         className="absolute -inset-[1px] rounded-[inherit] animate-border-rotate opacity-60"
         style={{
-          background: `conic-gradient(from var(--border-angle, 0deg), transparent 25%, #00F5FF 50%, #8B5CF6 75%, transparent 100%)`,
+          background: `conic-gradient(from var(--border-angle, 0deg), transparent 25%, #D58A9B 50%, #B76E82 75%, transparent 100%)`,
           borderRadius: "inherit",
         }}
       />

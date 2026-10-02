@@ -3,15 +3,15 @@ import ScrollReveal from "@/components/ui/ScrollReveal";
 import { Heart, ShoppingBag, Factory, Truck, GraduationCap, Landmark, HardHat, UtensilsCrossed, Cpu } from "lucide-react";
 
 const industries = [
-  { name: "Healthcare", icon: Heart, accent: "#00F5FF" },
-  { name: "Retail", icon: ShoppingBag, accent: "#8B5CF6" },
-  { name: "Manufacturing", icon: Factory, accent: "#FF006E" },
-  { name: "Logistics", icon: Truck, accent: "#39FF14" },
-  { name: "Education", icon: GraduationCap, accent: "#00F5FF" },
-  { name: "Finance", icon: Landmark, accent: "#8B5CF6" },
-  { name: "Construction", icon: HardHat, accent: "#FF006E" },
-  { name: "Hospitality", icon: UtensilsCrossed, accent: "#39FF14" },
-  { name: "Technology", icon: Cpu, accent: "#00F5FF" },
+  { name: "Healthcare", icon: Heart, accent: "#D58A9B" },
+  { name: "Retail", icon: ShoppingBag, accent: "#B76E82" },
+  { name: "Manufacturing", icon: Factory, accent: "#76243C" },
+  { name: "Logistics", icon: Truck, accent: "#CCB38F" },
+  { name: "Education", icon: GraduationCap, accent: "#D58A9B" },
+  { name: "Finance", icon: Landmark, accent: "#B76E82" },
+  { name: "Construction", icon: HardHat, accent: "#76243C" },
+  { name: "Hospitality", icon: UtensilsCrossed, accent: "#CCB38F" },
+  { name: "Technology", icon: Cpu, accent: "#D58A9B" },
 ];
 
 export default function Industries() {

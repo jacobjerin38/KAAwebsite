@@ -13,7 +13,7 @@ export default function CTA() {
     <section className="section-padding relative overflow-hidden bg-space-deep">
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute inset-0 perspective-grid opacity-50" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-neon-cyan/4 rounded-full blur-[120px]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] sm:w-[600px] h-[250px] sm:h-[400px] bg-neon-cyan/4 rounded-full blur-3xl" />
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-neon-cyan/25 to-transparent" />
         <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-neon-purple/25 to-transparent" />
       </div>
@@ -23,15 +23,15 @@ export default function CTA() {
           <ScrollReveal>
             <div className="inline-flex items-center gap-3 mb-8">
               <div className="h-[1px] w-12 bg-gradient-to-r from-transparent to-neon-cyan" />
-              <span className="text-xs font-mono font-semibold uppercase tracking-[0.2em] text-neon-cyan">Ready to Transform?</span>
+              <span className="text-xs font-mono font-semibold uppercase tracking-[0.2em] text-neon-cyan">Ready to Scale?</span>
               <div className="h-[1px] w-12 bg-gradient-to-l from-transparent to-neon-cyan" />
             </div>
           </ScrollReveal>
 
           <ScrollReveal delay={0.1}>
             <h2 className="font-display font-bold text-white leading-tight mb-4" style={{ fontSize: "clamp(2.2rem, 5vw, 4rem)" }}>
-              One Platform.{" "}
-              <span className="gradient-text-neon">Every Solution.</span>
+              Your Business Deserves{" "}
+              <span className="gradient-text-neon">Better Technology.</span>
             </h2>
           </ScrollReveal>
 
@@ -40,8 +40,7 @@ export default function CTA() {
               Less chaos. More clarity.
             </p>
             <p className="text-base text-slate-500 mb-10 max-w-xl mx-auto">
-              Your business has outgrown the old way. One system. Every department. Real-time data.
-              Ready to scale — starting today.
+              Let&apos;s build the right technology foundation for your business.
             </p>
           </ScrollReveal>
 
@@ -54,7 +53,7 @@ export default function CTA() {
                 className="btn-neon text-base px-8 py-4"
               >
                 <Zap size={18} />
-                <span>It&apos;s Time For ERP</span>
+                <span>Explore Solutions</span>
               </motion.button>
               <motion.button
                 onClick={() => scrollTo("#contact")}
@@ -62,7 +61,7 @@ export default function CTA() {
                 whileTap={{ scale: 0.97 }}
                 className="btn-outline text-base px-8 py-4"
               >
-                <span>Let KAA Handle It</span>
+                <span>Talk to KAA</span>
                 <ArrowRight size={16} />
               </motion.button>
             </div>

@@ -1,25 +1,26 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 /* ═══════════════════════════════════════════════════════════
-   CSS Custom Properties — Neon Sci-Fi Design System
+   CSS Custom Properties — KAA premium technology design system
    ═══════════════════════════════════════════════════════════ */
 :root {
-  /* Neon palette */
-  --neon-cyan: #00F5FF;
-  --neon-purple: #8B5CF6;
-  --neon-magenta: #FF006E;
-  --neon-green: #39FF14;
-  --neon-pink: #E91E63;
+  /* Burgundy and blush accents */
+  --neon-cyan: #D58A9B;
+  --neon-purple: #B76E82;
+  --neon-magenta: #76243C;
+  --neon-green: #CCB38F;
+  --neon-pink: #B76075;
+  --brand-wine: #76243C;
+  --brand-rose: #D58A9B;
+  --brand-cream: #F4EEE7;
 
   /* Space backgrounds */
-  --space-void: #030014;
-  --space-deep: #0A0A1A;
-  --space-surface: #111128;
-  --space-card: rgba(15, 15, 40, 0.6);
+  --space-void: #0D111B;
+  --space-deep: #151923;
+  --space-surface: #202431;
+  --space-card: rgba(23, 27, 39, 0.6);
 
   /* Typography */
   --font-display: 'Space Grotesk', system-ui, sans-serif;
@@ -45,6 +46,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -76,7 +78,7 @@ body {
 }
 
 ::selection {
-  background: rgba(0, 245, 255, 0.25);
+  background: rgba(213, 138, 155, 0.25);
   color: #FFFFFF;
 }
 
@@ -109,25 +111,25 @@ body {
    ═══════════════════════════════════════════════════════════ */
 .neon-text-cyan {
   color: var(--neon-cyan);
-  text-shadow: 0 0 7px var(--neon-cyan), 0 0 20px rgba(0, 245, 255, 0.3);
+  text-shadow: 0 0 7px var(--neon-cyan), 0 0 20px rgba(213, 138, 155, 0.3);
 }
 
 .neon-text-purple {
   color: var(--neon-purple);
-  text-shadow: 0 0 7px var(--neon-purple), 0 0 20px rgba(139, 92, 246, 0.3);
+  text-shadow: 0 0 7px var(--neon-purple), 0 0 20px rgba(183, 110, 130, 0.3);
 }
 
 .neon-text-magenta {
   color: var(--neon-magenta);
-  text-shadow: 0 0 7px var(--neon-magenta), 0 0 20px rgba(255, 0, 110, 0.3);
+  text-shadow: 0 0 7px var(--neon-magenta), 0 0 20px rgba(118, 36, 60, 0.3);
 }
 
 .neon-glow-cyan {
-  box-shadow: 0 0 15px rgba(0, 245, 255, 0.15), 0 0 45px rgba(0, 245, 255, 0.05), inset 0 0 15px rgba(0, 245, 255, 0.05);
+  box-shadow: 0 0 15px rgba(213, 138, 155, 0.15), 0 0 45px rgba(213, 138, 155, 0.05), inset 0 0 15px rgba(213, 138, 155, 0.05);
 }
 
 .neon-glow-purple {
-  box-shadow: 0 0 15px rgba(139, 92, 246, 0.15), 0 0 45px rgba(139, 92, 246, 0.05), inset 0 0 15px rgba(139, 92, 246, 0.05);
+  box-shadow: 0 0 15px rgba(183, 110, 130, 0.15), 0 0 45px rgba(183, 110, 130, 0.05), inset 0 0 15px rgba(183, 110, 130, 0.05);
 }
 
 /* ═══════════════════════════════════════════════════════════
@@ -135,13 +137,18 @@ body {
    ═══════════════════════════════════════════════════════════ */
 .holo-card {
   position: relative;
-  background: linear-gradient(135deg, rgba(15, 15, 40, 0.7) 0%, rgba(25, 25, 60, 0.4) 100%);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(0, 245, 255, 0.08);
+  background: linear-gradient(135deg, rgba(23, 27, 39, 0.88) 0%, rgba(33, 38, 50, 0.75) 100%);
+  border: 1px solid rgba(213, 138, 155, 0.08);
   border-radius: 24px;
   transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
   overflow: hidden;
+}
+
+@media (min-width: 769px) {
+  .holo-card {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
 }
 
 .holo-card::before {
@@ -150,13 +157,13 @@ body {
   inset: 0;
   border-radius: inherit;
   padding: 1px;
-  background: conic-gradient(from var(--border-angle), transparent 25%, var(--neon-cyan) 50%, var(--neon-purple) 75%, transparent 100%);
+  background: linear-gradient(135deg, var(--brand-rose), var(--brand-wine));
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   opacity: 0;
   transition: opacity 0.5s ease;
-  animation: border-rotate 4s linear infinite;
+  pointer-events: none;
 }
 
 .holo-card:hover::before {
@@ -164,24 +171,29 @@ body {
 }
 
 .holo-card:hover {
-  border-color: rgba(0, 245, 255, 0.2);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 30px rgba(0, 245, 255, 0.08);
+  border-color: rgba(213, 138, 155, 0.2);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 30px rgba(213, 138, 155, 0.08);
   transform: translateY(-4px);
 }
 
 /* Static version for less interactive cards */
 .holo-card-static {
-  background: linear-gradient(135deg, rgba(15, 15, 40, 0.6) 0%, rgba(25, 25, 60, 0.3) 100%);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(0, 245, 255, 0.06);
+  background: linear-gradient(135deg, rgba(23, 27, 39, 0.88) 0%, rgba(33, 38, 50, 0.75) 100%);
+  border: 1px solid rgba(213, 138, 155, 0.06);
   border-radius: 20px;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+@media (min-width: 769px) {
+  .holo-card-static {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+}
+
 .holo-card-static:hover {
-  border-color: rgba(0, 245, 255, 0.15);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 245, 255, 0.06);
+  border-color: rgba(213, 138, 155, 0.15);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(213, 138, 155, 0.06);
 }
 
 /* ═══════════════════════════════════════════════════════════
@@ -216,6 +228,21 @@ body {
   padding-right: clamp(1.5rem, 5vw, 5rem);
 }
 
+:focus-visible {
+  outline: 3px solid var(--brand-rose);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 /* ═══════════════════════════════════════════════════════════
    Perspective Grid Floor
    ═══════════════════════════════════════════════════════════ */
@@ -226,6 +253,12 @@ body {
   pointer-events: none;
 }
 
+@media (max-width: 768px) {
+  .perspective-grid {
+    display: none !important;
+  }
+}
+
 .perspective-grid::after {
   content: '';
   position: absolute;
@@ -234,8 +267,8 @@ body {
   right: -50%;
   height: 200%;
   background-image:
-    linear-gradient(rgba(0, 245, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 245, 255, 0.03) 1px, transparent 1px);
+    linear-gradient(rgba(213, 138, 155, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(213, 138, 155, 0.03) 1px, transparent 1px);
   background-size: 60px 60px;
   transform: perspective(500px) rotateX(60deg);
   animation: grid-scroll 20s linear infinite;
@@ -244,13 +277,13 @@ body {
 /* Subtle grid (non-perspective) */
 .subtle-grid {
   background-image:
-    linear-gradient(rgba(0, 245, 255, 0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 245, 255, 0.02) 1px, transparent 1px);
+    linear-gradient(rgba(213, 138, 155, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(213, 138, 155, 0.02) 1px, transparent 1px);
   background-size: 60px 60px;
 }
 
 .dot-pattern {
-  background-image: radial-gradient(circle, rgba(0, 245, 255, 0.04) 1px, transparent 1px);
+  background-image: radial-gradient(circle, rgba(213, 138, 155, 0.04) 1px, transparent 1px);
   background-size: 28px 28px;
 }
 
@@ -265,8 +298,8 @@ body {
     0deg,
     transparent,
     transparent 2px,
-    rgba(0, 245, 255, 0.01) 2px,
-    rgba(0, 245, 255, 0.01) 4px
+    rgba(213, 138, 155, 0.01) 2px,
+    rgba(213, 138, 155, 0.01) 4px
   );
   pointer-events: none;
   z-index: 1;
@@ -278,7 +311,7 @@ body {
 .btn-neon {
   position: relative;
   background: linear-gradient(135deg, var(--neon-cyan) 0%, var(--neon-purple) 100%);
-  color: #030014;
+  color: #0D111B;
   padding: 14px 36px;
   border-radius: 12px;
   font-weight: 700;
@@ -291,7 +324,7 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  box-shadow: 0 4px 20px rgba(0, 245, 255, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 20px rgba(213, 138, 155, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.2);
   overflow: hidden;
 }
 
@@ -307,7 +340,7 @@ body {
 
 .btn-neon:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(0, 245, 255, 0.35), 0 0 60px rgba(0, 245, 255, 0.15);
+  box-shadow: 0 8px 30px rgba(213, 138, 155, 0.35), 0 0 60px rgba(213, 138, 155, 0.15);
   color: #FFFFFF;
 }
 
@@ -337,16 +370,16 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  box-shadow: 0 4px 20px rgba(255, 0, 110, 0.25);
+  box-shadow: 0 4px 20px rgba(118, 36, 60, 0.25);
 }
 
 .btn-pink:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(255, 0, 110, 0.4), 0 0 40px rgba(255, 0, 110, 0.1);
+  box-shadow: 0 8px 30px rgba(118, 36, 60, 0.4), 0 0 40px rgba(118, 36, 60, 0.1);
 }
 
 .btn-outline {
-  background: rgba(0, 245, 255, 0.03);
+  background: rgba(213, 138, 155, 0.03);
   color: var(--neon-cyan);
   padding: 14px 36px;
   border-radius: 12px;
@@ -354,7 +387,7 @@ body {
   font-size: 14px;
   font-family: var(--font-display);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  border: 1px solid rgba(0, 245, 255, 0.2);
+  border: 1px solid rgba(213, 138, 155, 0.2);
   cursor: pointer;
   display: inline-flex;
   align-items: center;
@@ -363,9 +396,9 @@ body {
 }
 
 .btn-outline:hover {
-  background: rgba(0, 245, 255, 0.08);
-  border-color: rgba(0, 245, 255, 0.4);
-  box-shadow: 0 0 20px rgba(0, 245, 255, 0.1);
+  background: rgba(213, 138, 155, 0.08);
+  border-color: rgba(213, 138, 155, 0.4);
+  box-shadow: 0 0 20px rgba(213, 138, 155, 0.1);
   transform: translateY(-2px);
 }
 
@@ -374,7 +407,7 @@ body {
    ═══════════════════════════════════════════════════════════ */
 .progress-bar {
   height: 6px;
-  background: rgba(0, 245, 255, 0.06);
+  background: rgba(213, 138, 155, 0.06);
   border-radius: 999px;
   overflow: hidden;
 }
@@ -384,7 +417,7 @@ body {
   border-radius: 999px;
   background: linear-gradient(90deg, var(--neon-cyan) 0%, var(--neon-purple) 100%);
   transition: width 1.5s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 0 10px var(--neon-cyan), 0 0 20px rgba(0, 245, 255, 0.3);
+  box-shadow: 0 0 10px var(--neon-cyan), 0 0 20px rgba(213, 138, 155, 0.3);
 }
 
 /* ═══════════════════════════════════════════════════════════
@@ -419,7 +452,7 @@ body {
 
 @keyframes pulse-neon {
   0%, 100% { opacity: 0.4; box-shadow: 0 0 5px var(--neon-cyan); }
-  50% { opacity: 1; box-shadow: 0 0 20px var(--neon-cyan), 0 0 40px rgba(0, 245, 255, 0.3); }
+  50% { opacity: 1; box-shadow: 0 0 20px var(--neon-cyan), 0 0 40px rgba(213, 138, 155, 0.3); }
 }
 
 @keyframes scan-line {
@@ -472,20 +505,20 @@ body {
    Light Mode — Frosted Holographic
    ═══════════════════════════════════════════════════════════ */
 html.light body {
-  background-color: #F0F2F5 !important;
+  background-color: #F4EEE7 !important;
   color: #1A1A2E !important;
 }
 
 html.light ::-webkit-scrollbar-track {
-  background: #F0F2F5;
+  background: #F4EEE7;
 }
 
 html.light ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #8B5CF6, #FF006E);
+  background: linear-gradient(180deg, #B76E82, #76243C);
 }
 
 html.light section {
-  background-color: #F0F2F5 !important;
+  background-color: #F4EEE7 !important;
 }
 
 html.light .text-white,
@@ -502,27 +535,27 @@ html.light .text-slate-400 {
 html.light .holo-card,
 html.light .holo-card-static {
   background: rgba(255, 255, 255, 0.7) !important;
-  border-color: rgba(139, 92, 246, 0.1) !important;
+  border-color: rgba(183, 110, 130, 0.1) !important;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.8) !important;
 }
 
 html.light .holo-card:hover,
 html.light .holo-card-static:hover {
   background: rgba(255, 255, 255, 0.9) !important;
-  border-color: rgba(139, 92, 246, 0.2) !important;
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08), 0 0 20px rgba(139, 92, 246, 0.06) !important;
+  border-color: rgba(183, 110, 130, 0.2) !important;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08), 0 0 20px rgba(183, 110, 130, 0.06) !important;
 }
 
 html.light .subtle-grid {
   background-image:
-    linear-gradient(rgba(139, 92, 246, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(139, 92, 246, 0.04) 1px, transparent 1px) !important;
+    linear-gradient(rgba(183, 110, 130, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(183, 110, 130, 0.04) 1px, transparent 1px) !important;
 }
 
 html.light .perspective-grid::after {
   background-image:
-    linear-gradient(rgba(139, 92, 246, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(139, 92, 246, 0.04) 1px, transparent 1px) !important;
+    linear-gradient(rgba(183, 110, 130, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(183, 110, 130, 0.04) 1px, transparent 1px) !important;
 }
 
 html.light header {
@@ -530,41 +563,41 @@ html.light header {
 }
 
 html.light .btn-outline {
-  background: rgba(139, 92, 246, 0.04) !important;
+  background: rgba(183, 110, 130, 0.04) !important;
   color: var(--neon-purple) !important;
-  border-color: rgba(139, 92, 246, 0.2) !important;
+  border-color: rgba(183, 110, 130, 0.2) !important;
 }
 
 html.light .btn-outline:hover {
-  background: rgba(139, 92, 246, 0.1) !important;
+  background: rgba(183, 110, 130, 0.1) !important;
 }
 
 html.light input,
 html.light textarea,
 html.light select {
   background-color: rgba(255, 255, 255, 0.9) !important;
-  border-color: rgba(139, 92, 246, 0.15) !important;
+  border-color: rgba(183, 110, 130, 0.15) !important;
   color: #1A1A2E !important;
 }
 
 html.light input:focus,
 html.light textarea:focus {
   border-color: var(--neon-purple) !important;
-  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1) !important;
+  box-shadow: 0 0 0 3px rgba(183, 110, 130, 0.1) !important;
 }
 
 html.light .neon-text-cyan {
-  color: #0891B2 !important;
+  color: #76243C !important;
   text-shadow: none !important;
 }
 
 html.light .neon-text-purple {
-  color: #7C3AED !important;
+  color: #8D4058 !important;
   text-shadow: none !important;
 }
 
 html.light .neon-text-magenta {
-  color: #DB2777 !important;
+  color: #76243C !important;
   text-shadow: none !important;
 }
 
@@ -577,6 +610,13 @@ html.light .btn-neon > * {
 
 html.light a[href*="wa.me"],
 html.light a[href*="wa.me"] * {
+  color: #FFFFFF !important;
+}
+
+html.light #kaa-chat-panel,
+html.light #kaa-chat-panel .text-white,
+html.light #kaa-chat-panel h2,
+html.light .kaa-chat-trigger {
   color: #FFFFFF !important;
 }
 

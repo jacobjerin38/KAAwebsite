@@ -7,7 +7,7 @@ const problems = [
   {
     id: 1,
     icon: TrendingUp,
-    accent: "#FF006E",
+    accent: "#76243C",
     headline: "You're Scaling But Your Systems Aren't",
     points: ["More orders", "More teams", "More locations"],
     punchline: "Growth without the right system doesn't scale — it breaks. Your business has outgrown the old way.",
@@ -15,7 +15,7 @@ const problems = [
   {
     id: 2,
     icon: Users,
-    accent: "#8B5CF6",
+    accent: "#B76E82",
     headline: "Every Department Works In Its Own Bubble",
     points: [
       "Sales doesn't know what inventory has",
@@ -27,7 +27,7 @@ const problems = [
   {
     id: 3,
     icon: ClipboardList,
-    accent: "#00F5FF",
+    accent: "#D58A9B",
     headline: "Your Team Is Still Doing Reports Manually",
     points: ["Hours spent copy-pasting", "Cross-checking spreadsheets", "Sending files back and forth"],
     punchline: "That's not reporting. That's wasting your most valuable resource — time. Your team deserves better.",
@@ -35,7 +35,7 @@ const problems = [
   {
     id: 4,
     icon: Eye,
-    accent: "#39FF14",
+    accent: "#CCB38F",
     headline: "You Have Zero Real-Time Visibility",
     points: ["What's our stock right now?", "How much did we sell today?", "Where is that order?"],
     punchline: "If the answer is always 'Let me check and get back to you' — you're running blind.",
@@ -43,7 +43,7 @@ const problems = [
   {
     id: 5,
     icon: Database,
-    accent: "#FF006E",
+    accent: "#76243C",
     headline: "Your Data Lives In 10 Different Places",
     points: ["Excel here", "WhatsApp there", "Register in account", "Another file on someone's laptop"],
     punchline: "When no one knows which number is right, your business is already losing. Sounds familiar?",
@@ -62,8 +62,8 @@ export default function BusinessProblems() {
       <div className="perspective-grid" />
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-neon-magenta/30 to-transparent" />
-        <div className="absolute -top-60 left-1/4 w-[600px] h-[600px] bg-neon-magenta/4 rounded-full blur-[150px]" />
-        <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-neon-purple/4 rounded-full blur-[120px]" />
+        <div className="absolute -top-60 left-1/4 w-[280px] sm:w-[500px] h-[280px] sm:h-[500px] bg-neon-magenta/4 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-1/4 w-[250px] sm:w-[400px] h-[250px] sm:h-[400px] bg-neon-purple/4 rounded-full blur-3xl" />
       </div>
 
       <div className="kaa-container relative z-10">

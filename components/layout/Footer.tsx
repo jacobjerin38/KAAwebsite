@@ -32,8 +32,8 @@ export default function Footer() {
       <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-neon-magenta/40 to-transparent" />
 
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute -top-40 right-0 w-[500px] h-[500px] bg-neon-purple/5 rounded-full blur-[100px]" />
-        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-neon-magenta/5 rounded-full blur-[100px]" />
+        <div className="absolute -top-40 right-0 w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] bg-neon-purple/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-[250px] sm:w-[400px] h-[250px] sm:h-[400px] bg-neon-magenta/5 rounded-full blur-3xl" />
         <div className="absolute inset-0 subtle-grid opacity-8" />
       </div>
 
@@ -45,7 +45,7 @@ export default function Footer() {
               <div className="relative h-12 w-48 transition-all duration-300 group-hover:scale-[1.03]">
                 <Image src="/kaa-logo.png" alt="KAA Software and Technologies" fill
                   style={{ objectFit: "contain", objectPosition: "left center" }}
-                  className="brightness-0 invert opacity-80 transition-all duration-300 drop-shadow-[0_0_8px_rgba(0,245,255,0.2)] group-hover:opacity-100 group-hover:drop-shadow-[0_0_16px_rgba(0,245,255,0.5)]" />
+                  className="brightness-0 invert opacity-80 transition-all duration-300 drop-shadow-[0_0_8px_rgba(213,138,155,0.2)] group-hover:opacity-100 group-hover:drop-shadow-[0_0_16px_rgba(213,138,155,0.5)]" />
               </div>
             </a>
             <p className="text-sm leading-relaxed mb-8 max-w-sm text-slate-500">
@@ -92,7 +92,7 @@ export default function Footer() {
               ))}
               <li className="pt-4">
                 <a href="mailto:info@kaatechnologies.qa"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-display font-semibold text-white transition-all duration-300 bg-neon-cyan/[0.06] hover:bg-neon-cyan/15 border border-neon-cyan/10 hover:border-neon-cyan/25 hover:shadow-[0_8px_24px_rgba(0,245,255,0.1)]">
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-display font-semibold text-white transition-all duration-300 bg-neon-cyan/[0.06] hover:bg-neon-cyan/15 border border-neon-cyan/10 hover:border-neon-cyan/25 hover:shadow-[0_8px_24px_rgba(213,138,155,0.1)]">
                   <Mail size={14} /> Send Email
                 </a>
               </li>
@@ -102,11 +102,7 @@ export default function Footer() {
 
         <div className="py-6 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-neon-cyan/5">
           <p className="text-xs text-slate-600">© {new Date().getFullYear()} KAA Technologies. All rights reserved.</p>
-          <div className="flex gap-4">
-            <a href="#" className="text-xs text-slate-600 hover:text-neon-cyan transition-colors">Privacy Policy</a>
-            <span className="text-slate-700">•</span>
-            <a href="#" className="text-xs text-slate-600 hover:text-neon-cyan transition-colors">Terms of Service</a>
-          </div>
+          <span className="text-xs text-slate-600">Doha, Qatar</span>
         </div>
       </div>
     </footer>

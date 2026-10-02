@@ -6,8 +6,8 @@ import HolographicCard from "@/components/effects/HolographicCard";
 import NeonBorder from "@/components/effects/NeonBorder";
 
 const stats = [
-  { value: "50+", label: "Successful Projects" },
-  { value: "100%", label: "Client Satisfaction" },
+  { value: "Doha", label: "Qatar Headquarters" },
+  { value: "Kochi", label: "Engineering Center" },
   { value: "24/7", label: "GCC Support" }
 ];
 
@@ -21,8 +21,8 @@ export default function About() {
     <section id="about" className="section-padding relative overflow-hidden bg-space-deep">
       <div className="absolute inset-0 subtle-grid opacity-20 pointer-events-none" />
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/4 -left-64 w-[600px] h-[600px] bg-neon-magenta/8 rounded-full blur-[150px]" />
-        <div className="absolute bottom-1/4 -right-64 w-[600px] h-[600px] bg-neon-purple/8 rounded-full blur-[150px]" />
+        <div className="absolute top-1/4 -left-64 w-[280px] sm:w-[500px] h-[280px] sm:h-[500px] bg-neon-magenta/8 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 -right-64 w-[280px] sm:w-[500px] h-[280px] sm:h-[500px] bg-neon-purple/8 rounded-full blur-3xl" />
       </div>
 
       <div className="kaa-container relative z-10">
@@ -43,7 +43,7 @@ export default function About() {
             </ScrollReveal>
 
             <ScrollReveal delay={0.18}>
-              <div className="p-5 rounded-2xl mb-6 border" style={{ background: "rgba(255,0,110,0.04)", borderColor: "rgba(255,0,110,0.12)" }}>
+              <div className="p-5 rounded-2xl mb-6 border" style={{ background: "rgba(118,36,60,0.04)", borderColor: "rgba(118,36,60,0.12)" }}>
                 <p className="text-xs font-mono font-semibold uppercase tracking-widest text-neon-magenta mb-2">We Don&apos;t Just Sell Software</p>
                 <p className="text-white font-display font-semibold text-base mb-1">Your Growth. Our Purpose.</p>
                 <p className="text-slate-400 text-sm leading-relaxed">

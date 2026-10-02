@@ -55,8 +55,7 @@ export default function HolographicCard({
       onMouseLeave={handleMouseLeave}
       className={`holo-card relative ${className}`}
       style={{
-        perspective: "1000px",
-        transform: `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`,
+        transform: rotateX || rotateY ? `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)` : undefined,
         transition: "transform 0.15s ease-out",
       }}
     >
@@ -72,7 +71,7 @@ export default function HolographicCard({
       <div
         className="absolute inset-0 rounded-[inherit] opacity-0 hover:opacity-30 transition-opacity duration-700 pointer-events-none z-0"
         style={{
-          background: `linear-gradient(105deg, transparent 40%, rgba(${glowColor}, 0.06) 45%, rgba(139, 92, 246, 0.06) 50%, rgba(255, 0, 110, 0.06) 55%, transparent 60%)`,
+          background: `linear-gradient(105deg, transparent 40%, rgba(${glowColor}, 0.06) 45%, rgba(183, 110, 130, 0.06) 50%, rgba(118, 36, 60, 0.06) 55%, transparent 60%)`,
           transform: `translateX(${(glowX - 50) * 0.3}%)`,
         }}
       />

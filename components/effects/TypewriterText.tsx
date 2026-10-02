@@ -57,8 +57,8 @@ export default function TypewriterText({
         <span
           className="inline-block w-[2px] h-[1em] ml-1 align-middle animate-blink-caret"
           style={{
-            backgroundColor: "#00F5FF",
-            boxShadow: "0 0 8px #00F5FF",
+            backgroundColor: "#D58A9B",
+            boxShadow: "0 0 8px #D58A9B",
           }}
         />
       )}

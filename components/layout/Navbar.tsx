@@ -6,8 +6,9 @@ import Image from "next/image";
 
 const navLinks = [
   { label: "Home", href: "#home" },
-  { label: "About Us", href: "#about" },
-  { label: "Services", href: "#services" },
+  { label: "Solutions", href: "#solutions" },
+  { label: "ERP", href: "#erp" },
+  { label: "About", href: "#about" },
   { label: "Contact Us", href: "#contact" },
 ];
 
@@ -67,11 +68,11 @@ export default function Navbar() {
         transition={{ duration: 0.6, ease: [0.21, 0.47, 0.32, 0.98] }}
         className={`fixed left-0 right-0 z-50 transition-all duration-500 ${
           scrolled
-            ? "top-0 bg-space-void/80 backdrop-blur-xl border-b border-neon-cyan/5 shadow-[0_4px_30px_rgba(0,245,255,0.03)]"
+            ? "top-0 bg-space-void/80 backdrop-blur-xl border-b border-neon-cyan/5 shadow-[0_4px_30px_rgba(213,138,155,0.03)]"
             : "top-0 sm:top-6 bg-transparent"
         }`}
       >
-        <nav className="kaa-container">
+        <nav className="kaa-container" aria-label="Main navigation">
           <div className="flex items-center justify-between h-16 md:h-18">
             {/* Logo */}
             <a
@@ -91,7 +92,7 @@ export default function Navbar() {
                   alt="KAA Software and Technologies"
                   fill
                   style={{ objectFit: "contain", objectPosition: "left center" }}
-                  className="brightness-0 invert opacity-90 transition-all duration-300 drop-shadow-[0_0_8px_rgba(0,245,255,0.3)] group-hover:drop-shadow-[0_0_16px_rgba(0,245,255,0.6)]"
+                  className="brightness-0 invert opacity-90 transition-all duration-300 drop-shadow-[0_0_8px_rgba(213,138,155,0.3)] group-hover:drop-shadow-[0_0_16px_rgba(213,138,155,0.6)]"
                   priority
                 />
               </div>
@@ -105,7 +106,7 @@ export default function Navbar() {
                   onClick={() => scrollTo(link.href, link.label)}
                   className="relative px-4 py-2 text-sm font-medium transition-all duration-300 rounded-lg"
                   style={{
-                    color: activeLink === link.label ? "#00F5FF" : "rgba(226, 232, 240, 0.7)",
+                    color: activeLink === link.label ? "#D58A9B" : "rgba(226, 232, 240, 0.7)",
                   }}
                   onMouseEnter={(e) => {
                     if (activeLink !== link.label)
@@ -122,8 +123,8 @@ export default function Navbar() {
                       layoutId="nav-underline"
                       className="absolute bottom-0 left-4 right-4 h-[2px] rounded-full"
                       style={{
-                        background: "linear-gradient(90deg, #00F5FF, #8B5CF6)",
-                        boxShadow: "0 0 12px rgba(0,245,255,0.5)",
+                        background: "linear-gradient(90deg, #D58A9B, #B76E82)",
+                        boxShadow: "0 0 12px rgba(213,138,155,0.5)",
                       }}
                     />
                   )}
@@ -153,7 +154,7 @@ export default function Navbar() {
                 className="btn-neon"
                 style={{ borderRadius: "10px", padding: "10px 24px", fontSize: "13px" }}
               >
-                <span>Start Consultation</span>
+                <span>Talk to KAA</span>
               </button>
             </div>
 
@@ -170,6 +171,8 @@ export default function Navbar() {
                 className="p-2.5 rounded-lg transition-colors hover:bg-neon-cyan/5 border border-neon-cyan/10 text-slate-400"
                 onClick={() => setMobileOpen(!mobileOpen)}
                 aria-label="Toggle menu"
+                aria-expanded={mobileOpen}
+                aria-controls="mobile-navigation"
               >
                 {mobileOpen ? (
                   <X size={18} className="text-neon-cyan" />
@@ -190,6 +193,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
+            id="mobile-navigation"
             className="fixed inset-0 z-40 md:hidden pt-16"
             style={{
               background: "rgba(3, 0, 20, 0.98)",
@@ -206,12 +210,12 @@ export default function Navbar() {
                   onClick={() => scrollTo(link.href, link.label)}
                   className="text-left px-4 py-4 rounded-xl text-lg font-display font-semibold transition-all duration-200"
                   style={{
-                    color: activeLink === link.label ? "#00F5FF" : "rgba(226, 232, 240, 0.7)",
+                    color: activeLink === link.label ? "#D58A9B" : "rgba(226, 232, 240, 0.7)",
                     borderLeft: activeLink === link.label
-                      ? "3px solid #00F5FF"
+                      ? "3px solid #D58A9B"
                       : "3px solid transparent",
                     background: activeLink === link.label
-                      ? "rgba(0, 245, 255, 0.03)"
+                      ? "rgba(213, 138, 155, 0.03)"
                       : "transparent",
                   }}
                 >
@@ -225,7 +229,7 @@ export default function Navbar() {
                 onClick={() => scrollTo("#contact", "Contact Us")}
                 className="mt-6 w-full py-4 rounded-xl text-base font-display font-bold text-white btn-neon justify-center"
               >
-                <span>Start Consultation</span>
+                <span>Talk to KAA</span>
               </motion.button>
             </div>
           </motion.div>

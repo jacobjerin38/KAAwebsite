@@ -13,7 +13,7 @@ export default function Testimonials() {
     <section id="testimonials" className="section-padding relative overflow-hidden bg-space-void">
       <div className="absolute inset-0 subtle-grid opacity-8 pointer-events-none" />
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-neon-cyan/4 rounded-full blur-[180px]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] bg-neon-cyan/4 rounded-full blur-3xl" />
       </div>
 
       <div className="kaa-container relative z-10">
@@ -36,14 +36,12 @@ export default function Testimonials() {
         <ScrollReveal delay={0.15}>
           <motion.div
             className="max-w-2xl mx-auto rounded-[2rem] border border-neon-cyan/12 bg-neon-cyan/[0.02] backdrop-blur-sm p-12 text-center relative overflow-hidden"
-            whileHover={{ borderColor: "rgba(0,245,255,0.25)", boxShadow: "0 0 50px rgba(0,245,255,0.06)" }}
+            whileHover={{ borderColor: "rgba(213,138,155,0.25)", boxShadow: "0 0 50px rgba(213,138,155,0.06)" }}
             transition={{ duration: 0.4 }}
           >
             {/* Animated glow orb */}
-            <motion.div
-              animate={{ scale: [1, 1.15, 1], opacity: [0.15, 0.28, 0.15] }}
-              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-neon-cyan rounded-full blur-[100px] pointer-events-none"
+            <div
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-neon-cyan/20 rounded-full blur-2xl pointer-events-none"
             />
 
             <div className="relative z-10">

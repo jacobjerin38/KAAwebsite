@@ -8,8 +8,8 @@ const pillars = [
     icon: Shield,
     title: "Reliable & Secure",
     subtitle: "Enterprise-grade protection",
-    points: ["Enterprise security", "Full audit trails", "99.9% uptime SLA"],
-    accent: "#FF006E",
+    points: ["Security-first architecture", "Data protection", "Secure cloud solutions"],
+    accent: "#76243C",
     description: "Every KAA system is built with security-first architecture. Your data stays protected, backed up, and compliant.",
   },
   {
@@ -17,7 +17,7 @@ const pillars = [
     title: "Built Around Your Workflow",
     subtitle: "Your process, not a template",
     points: ["Custom processes", "Workflow management", "Flexible operations"],
-    accent: "#8B5CF6",
+    accent: "#B76E82",
     description: "We map your actual business workflows — not force you into a generic template. Every module adapts to how you work.",
   },
   {
@@ -25,7 +25,7 @@ const pillars = [
     title: "Easy to Use",
     subtitle: "Adopted fast, loved faster",
     points: ["User-friendly UI", "Faster adoption", "Simple interface"],
-    accent: "#00F5FF",
+    accent: "#D58A9B",
     description: "Clean dashboards your team will actually use. No training marathons. Just intuitive tools that make sense on day one.",
   },
   {
@@ -33,7 +33,7 @@ const pillars = [
     title: "Team Collaboration",
     subtitle: "One platform, every department",
     points: ["Connected departments", "Role-based access", "Shared dashboards"],
-    accent: "#39FF14",
+    accent: "#CCB38F",
     description: "Sales, HR, Finance, and Operations — all connected in real time. No more silos, no more miscommunication.",
   },
   {
@@ -41,8 +41,8 @@ const pillars = [
     title: "Ready to Scale",
     subtitle: "Grows with your business",
     points: ["Built for growth", "Multi-location support", "Multi-device access"],
-    accent: "#FF8C00",
-    description: "Whether you have 5 or 500 employees, KAA scales with you. Add users, locations, and modules as you grow.",
+    accent: "#A64D66",
+    description: "Solutions designed to adapt as your business, teams, and locations grow.",
   },
 ];
 
@@ -60,8 +60,8 @@ export default function WhyChooseUs() {
     <section id="why-choose-us" className="section-padding relative overflow-hidden bg-space-void">
       <div className="perspective-grid" />
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute -left-40 top-0 w-[600px] h-[600px] bg-neon-cyan/4 rounded-full blur-[150px]" />
-        <div className="absolute -right-40 bottom-0 w-[500px] h-[500px] bg-neon-purple/4 rounded-full blur-[150px]" />
+        <div className="absolute -left-40 top-0 w-[280px] sm:w-[500px] h-[280px] sm:h-[500px] bg-neon-cyan/4 rounded-full blur-3xl" />
+        <div className="absolute -right-40 bottom-0 w-[250px] sm:w-[450px] h-[250px] sm:h-[450px] bg-neon-purple/4 rounded-full blur-3xl" />
       </div>
 
       <div className="relative z-10 kaa-container">
@@ -173,10 +173,10 @@ export default function WhyChooseUs() {
 
             <div className="grid grid-cols-2 gap-4">
               {[
-                { icon: Shield, label: "Qatar&apos;s Trusted Partner", sub: "Delivering Excellence Since Day One", accent: "#FF006E" },
-                { icon: TrendingUp, label: "150+ Projects Delivered", sub: "Across Qatar, GCC & India", accent: "#00F5FF" },
-                { icon: Users, label: "50+ Businesses", sub: "Running on KAA Systems", accent: "#8B5CF6" },
-                { icon: MessageCircle, label: "24/7 Support", sub: "Always here when you need us", accent: "#39FF14" },
+                { icon: Shield, label: "Reliable & Secure", sub: "Security-first technology", accent: "#76243C" },
+                { icon: TrendingUp, label: "Ready to Scale", sub: "Designed around your growth", accent: "#D58A9B" },
+                { icon: Users, label: "Connected Teams", sub: "One platform across departments", accent: "#B76E82" },
+                { icon: MessageCircle, label: "24/7 IT Support", sub: "Support for systems and infrastructure", accent: "#CCB38F" },
               ].map((item) => {
                 const ItemIcon = item.icon;
                 return (
@@ -186,8 +186,7 @@ export default function WhyChooseUs() {
                       style={{ background: `${item.accent}10`, border: `1px solid ${item.accent}20` }}>
                       <ItemIcon size={16} style={{ color: item.accent }} />
                     </div>
-                    <div className="text-sm font-display font-bold text-white mb-0.5"
-                      dangerouslySetInnerHTML={{ __html: item.label }} />
+                    <div className="text-sm font-display font-bold text-white mb-0.5">{item.label}</div>
                     <div className="text-xs text-slate-500">{item.sub}</div>
                   </div>
                 );

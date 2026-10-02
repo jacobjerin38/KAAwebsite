@@ -23,12 +23,12 @@ const tabs = [
 ];
 
 const modules = [
-  { icon: Users, label: "HRMS", color: "#00F5FF" },
-  { icon: DollarSign, label: "Payroll", color: "#8B5CF6" },
-  { icon: Briefcase, label: "CRM", color: "#00F5FF" },
-  { icon: ShoppingCart, label: "Sales", color: "#39FF14" },
-  { icon: Package, label: "Inventory", color: "#FF006E" },
-  { icon: BarChart3, label: "Finance", color: "#8B5CF6" },
+  { icon: Users, label: "HRMS", color: "#D58A9B" },
+  { icon: DollarSign, label: "Payroll", color: "#B76E82" },
+  { icon: Briefcase, label: "CRM", color: "#D58A9B" },
+  { icon: ShoppingCart, label: "Sales", color: "#CCB38F" },
+  { icon: Package, label: "Inventory", color: "#76243C" },
+  { icon: BarChart3, label: "Finance", color: "#B76E82" },
 ];
 
 const benefits = [
@@ -54,137 +54,123 @@ const allModules = [
     icon: Building2,
     emoji: "🏢",
     name: "Organisation",
-    route: "/organisation",
     category: "hr",
     desc: "Structure, Masters, Roles, Workflows, Settings",
-    color: "#00F5FF"
+    color: "#D58A9B"
   },
   {
     id: "employees",
     icon: Users,
     emoji: "👥",
     name: "Employees",
-    route: "/employees",
     category: "hr",
     desc: "Directory, Profiles, Geolocation, Immigration",
-    color: "#8B5CF6"
+    color: "#B76E82"
   },
   {
     id: "attendance",
     icon: Clock,
     emoji: "⏱️",
     name: "Attendance",
-    route: "/attendance",
     category: "hr",
     desc: "Daily/Monthly Logs, Shifts, Duty Roster, OT Rules",
-    color: "#00F5FF"
+    color: "#D58A9B"
   },
   {
     id: "leave",
     icon: Calendar,
     emoji: "📅",
     name: "Leave",
-    route: "/leave",
     category: "hr",
     desc: "Leave Applications, Accruals, Balances, Calendar",
-    color: "#39FF14"
+    color: "#CCB38F"
   },
   {
     id: "payroll",
     icon: DollarSign,
     emoji: "💰",
     name: "Payroll",
-    route: "/payroll",
     category: "hr",
     desc: "Salary Runs, WPS Export, Payslips, Settlements",
-    color: "#8B5CF6"
+    color: "#B76E82"
   },
   {
     id: "essp",
     icon: UserCheck,
     emoji: "👤",
     name: "ESSP",
-    route: "/essp",
     category: "hr",
     desc: "Self-Service, Punch In/Out, Missed Punch, Approvals",
-    color: "#00F5FF"
+    color: "#D58A9B"
   },
   {
     id: "pro",
     icon: Shield,
     emoji: "🛡️",
     name: "PRO (Mandoob)",
-    route: "/pro",
     category: "hr",
     desc: "Govt Services, QID/Visa Renewals, Agent Tasks",
-    color: "#FF006E"
+    color: "#76243C"
   },
   {
     id: "crm",
     icon: Target,
     emoji: "🤝",
     name: "CRM",
-    route: "/crm",
     category: "sales",
     desc: "Leads, Deals, Pipelines, Contacts, AI Finder",
-    color: "#FF006E"
+    color: "#76243C"
   },
   {
     id: "sales",
     icon: ShoppingCart,
     emoji: "🛒",
     name: "Sales",
-    route: "/sales",
     category: "sales",
     desc: "Quotations, Sales Orders, Credit Limits, Invoices",
-    color: "#39FF14"
+    color: "#CCB38F"
   },
   {
     id: "accounting",
     icon: BookOpen,
     emoji: "🧮",
     name: "Accounting",
-    route: "/accounting",
     category: "finance",
     desc: "Chart of Accounts, Ledgers, Payments, Financial Reports",
-    color: "#8B5CF6"
+    color: "#B76E82"
   },
   {
     id: "inventory",
     icon: Package,
     emoji: "📦",
     name: "Inventory",
-    route: "/inventory",
     category: "finance",
     desc: "Item Master, Warehouses, Stock Ledger, Reservations",
-    color: "#39FF14"
+    color: "#CCB38F"
   },
   {
     id: "procurement",
     icon: ShoppingBag,
     emoji: "🛍️",
     name: "Procurement",
-    route: "/procurement",
     category: "finance",
     desc: "Requisitions, POs, GRNs, Vendor Bills",
-    color: "#00F5FF"
+    color: "#D58A9B"
   },
   {
     id: "manufacturing",
     icon: Factory,
     emoji: "🏭",
     name: "Manufacturing",
-    route: "/manufacturing",
     category: "finance",
     desc: "BOM, Work Centers, Production Orders",
-    color: "#FF006E"
+    color: "#76243C"
   },
   {
     id: "projects",
     icon: FolderKanban,
     emoji: "📋",
     name: "Projects",
-    route: "/projects",
     category: "workspace",
     desc: "Task Boards, Milestones, Timesheets",
     color: "#EAB308"
@@ -194,57 +180,51 @@ const allModules = [
     icon: Headphones,
     emoji: "🎧",
     name: "Help Desk",
-    route: "/help_desk",
     category: "sales",
     desc: "Support Tickets, SLAs, Escalations",
-    color: "#00F5FF"
+    color: "#D58A9B"
   },
   {
     id: "marketing",
     icon: Megaphone,
     emoji: "📢",
     name: "Marketing",
-    route: "/marketing",
     category: "sales",
     desc: "Campaigns, Leads Automation, Analytics",
-    color: "#FF006E"
+    color: "#76243C"
   },
   {
     id: "documents",
     icon: FileText,
     emoji: "📄",
     name: "Documents",
-    route: "/documents",
     category: "workspace",
     desc: "Policies, Contracts, Document Vault",
-    color: "#8B5CF6"
+    color: "#B76E82"
   },
   {
     id: "recruitment",
     icon: Briefcase,
     emoji: "💼",
     name: "Recruitment",
-    route: "/recruitment",
     category: "hr",
     desc: "ATS, Job Postings, Public Careers Portal (/careers)",
-    color: "#00F5FF"
+    color: "#D58A9B"
   },
   {
     id: "loans",
     icon: Coins,
     emoji: "💵",
     name: "Loans & Benefits",
-    route: "/loans",
     category: "hr",
     desc: "Advances, Loan Repayments, Claims",
-    color: "#39FF14"
+    color: "#CCB38F"
   },
   {
     id: "performance",
     icon: Trophy,
     emoji: "🏆",
     name: "Performance",
-    route: "/performance",
     category: "hr",
     desc: "Goals, OKRs, Appraisals",
     color: "#EAB308"
@@ -254,26 +234,25 @@ const allModules = [
     icon: Plane,
     emoji: "✈️",
     name: "Travel & Expenses",
-    route: "/travel",
     category: "finance",
     desc: "Trip Requests, Expense Claims, Receipts",
-    color: "#8B5CF6"
+    color: "#B76E82"
   },
   {
     id: "chat",
     icon: MessageSquare,
     emoji: "💬",
     name: "Team Chat",
-    route: "/chat",
     category: "workspace",
     desc: "Real-Time Direct & Channel Messaging",
-    color: "#00F5FF"
+    color: "#D58A9B"
   },
 ];
 
 export default function ERPShowcase() {
   const [activeTab, setActiveTab] = useState("overview");
   const [selectedCategory, setSelectedCategory] = useState("all");
+  const [selectedModule, setSelectedModule] = useState<string | null>(null);
 
   const scrollToContact = () => {
     const el = document.querySelector("#contact");
@@ -312,10 +291,10 @@ export default function ERPShowcase() {
                 onClick={() => setActiveTab(tab.id)}
                 className="px-5 py-2.5 rounded-xl text-sm font-display font-semibold transition-all duration-300 relative overflow-hidden"
                 style={{
-                  background: activeTab === tab.id ? "rgba(0,245,255,0.08)" : "rgba(0,245,255,0.02)",
-                  border: activeTab === tab.id ? "1px solid #00F5FF" : "1px solid rgba(0,245,255,0.06)",
+                  background: activeTab === tab.id ? "rgba(213,138,155,0.08)" : "rgba(213,138,155,0.02)",
+                  border: activeTab === tab.id ? "1px solid #D58A9B" : "1px solid rgba(213,138,155,0.06)",
                   color: activeTab === tab.id ? "#FFFFFF" : "#94A3B8",
-                  boxShadow: activeTab === tab.id ? "0 0 20px rgba(0,245,255,0.1)" : "none",
+                  boxShadow: activeTab === tab.id ? "0 0 20px rgba(213,138,155,0.1)" : "none",
                 }}
               >
                 {activeTab === tab.id && (
@@ -335,7 +314,7 @@ export default function ERPShowcase() {
               {/* OVERVIEW */}
               {activeTab === "overview" && (
                 <motion.div key="overview" {...tabMotion}
-                  className="relative rounded-2xl overflow-hidden p-2 bg-gradient-to-br from-neon-cyan/10 to-neon-purple/5 border border-neon-cyan/10 shadow-2xl backdrop-blur-md"
+                  className="relative rounded-2xl overflow-hidden p-2 bg-gradient-to-br from-neon-cyan/10 to-neon-purple/5 border border-neon-cyan/10 shadow-2xl"
                 >
                   <div className="flex items-center gap-2 px-4 py-3 bg-space-void/60 border-b border-neon-cyan/5 rounded-t-xl">
                     <span className="w-2.5 h-2.5 rounded-full bg-neon-magenta/80" />
@@ -361,7 +340,7 @@ export default function ERPShowcase() {
               {/* HRMS */}
               {activeTab === "hrms" && (
                 <motion.div key="hrms" {...tabMotion}
-                  className="p-8 rounded-2xl holo-card border border-neon-cyan/8 bg-space-surface/40 backdrop-blur-md"
+                  className="p-8 rounded-2xl holo-card border border-neon-cyan/8 bg-space-surface/40"
                 >
                   <div className="mb-6">
                     <span className="text-xs font-mono text-neon-cyan uppercase tracking-widest">Strategic Vertical 01</span>
@@ -371,9 +350,9 @@ export default function ERPShowcase() {
                   </div>
                   <div className="space-y-4">
                     {[
-                      { icon: UserCheck, title: "Attendance Management", desc: "Live biometric sync — zero manual punch-ins", val: "Auto Sync" },
-                      { icon: DollarSign, title: "Payroll Management", desc: "Qatar WPS-compliant automated salary & allowance processing", val: "WPS Ready" },
-                      { icon: PhoneCall, title: "Helpdesk Management", desc: "Employee requests, support tickets & HR portal", val: "Portal Live" },
+                      { icon: UserCheck, title: "Attendance Management", desc: "Attendance records, shifts and leave workflows", val: "Workflows" },
+                      { icon: DollarSign, title: "Payroll Management", desc: "Qatar WPS-compliant payroll and salary processing", val: "WPS" },
+                      { icon: PhoneCall, title: "Helpdesk Management", desc: "Employee requests and support tickets", val: "Support" },
                     ].map((item) => (
                       <div key={item.title} className="p-4 rounded-xl bg-space-void/40 border border-neon-cyan/8 flex items-center justify-between gap-4">
                         <div className="flex items-center gap-3">
@@ -395,7 +374,7 @@ export default function ERPShowcase() {
               {/* ACCOUNTING */}
               {activeTab === "accounting" && (
                 <motion.div key="accounting" {...tabMotion}
-                  className="p-8 rounded-2xl holo-card border border-neon-purple/15 bg-space-surface/40 backdrop-blur-md"
+                  className="p-8 rounded-2xl holo-card border border-neon-purple/15 bg-space-surface/40"
                 >
                   <div className="mb-6">
                     <span className="text-xs font-mono text-neon-purple uppercase tracking-widest">Finance Module</span>
@@ -430,7 +409,7 @@ export default function ERPShowcase() {
               {/* CRM */}
               {activeTab === "crm" && (
                 <motion.div key="crm" {...tabMotion}
-                  className="p-8 rounded-2xl holo-card border border-neon-magenta/15 bg-space-surface/40 backdrop-blur-md"
+                  className="p-8 rounded-2xl holo-card border border-neon-magenta/15 bg-space-surface/40"
                 >
                   <div className="mb-6">
                     <span className="text-xs font-mono text-neon-magenta uppercase tracking-widest">CRM Module</span>
@@ -465,7 +444,7 @@ export default function ERPShowcase() {
               {/* INVENTORY */}
               {activeTab === "inventory" && (
                 <motion.div key="inventory" {...tabMotion}
-                  className="p-8 rounded-2xl holo-card border border-neon-green/15 bg-space-surface/40 backdrop-blur-md"
+                  className="p-8 rounded-2xl holo-card border border-neon-green/15 bg-space-surface/40"
                 >
                   <div className="mb-6">
                     <span className="text-xs font-mono text-neon-green uppercase tracking-widest">Inventory Module</span>
@@ -505,7 +484,7 @@ export default function ERPShowcase() {
               {/* PROJECTS */}
               {activeTab === "projects" && (
                 <motion.div key="projects" {...tabMotion}
-                  className="p-8 rounded-2xl holo-card border border-amber-500/15 bg-space-surface/40 backdrop-blur-md"
+                  className="p-8 rounded-2xl holo-card border border-amber-500/15 bg-space-surface/40"
                 >
                   <div className="mb-6">
                     <span className="text-xs font-mono text-amber-400 uppercase tracking-widest">Project Management</span>
@@ -531,7 +510,7 @@ export default function ERPShowcase() {
                       </div>
                     ))}
                   </div>
-                  <div className="p-4 rounded-xl text-center" style={{ background: "linear-gradient(135deg, rgba(255,0,110,0.08) 0%, rgba(139,92,246,0.08) 100%)", border: "1px solid rgba(255,0,110,0.15)" }}>
+                  <div className="p-4 rounded-xl text-center" style={{ background: "linear-gradient(135deg, rgba(118,36,60,0.08) 0%, rgba(183,110,130,0.08) 100%)", border: "1px solid rgba(118,36,60,0.15)" }}>
                     <p className="font-display font-bold text-white tracking-wide">Plan it <span className="text-neon-magenta">|</span> Track it <span className="text-neon-magenta">|</span> Deliver it</p>
                   </div>
                 </motion.div>
@@ -570,14 +549,14 @@ export default function ERPShowcase() {
               </div>
               <div className="flex flex-wrap gap-3">
                 <button onClick={scrollToContact} className="btn-neon"><span>Schedule ERP Demo</span> <ArrowRight size={14} /></button>
-                <button onClick={scrollToContact} className="btn-outline">Learn Modules</button>
+                <a href="#erp-modules" className="btn-outline">Explore Modules</a>
               </div>
             </ScrollReveal>
           </div>
         </div>
 
         {/* 22-MODULE ENTERPRISE SUITE SECTION */}
-        <div className="pt-12 border-t border-neon-cyan/10">
+        <div id="erp-modules" className="pt-12 border-t border-neon-cyan/10 scroll-mt-24">
           <ScrollReveal>
             <div className="text-center max-w-3xl mx-auto mb-10">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full mb-4 border border-neon-cyan/20 bg-neon-cyan/5">
@@ -602,13 +581,14 @@ export default function ERPShowcase() {
                 <button
                   key={cat.id}
                   onClick={() => setSelectedCategory(cat.id)}
+                  aria-pressed={selectedCategory === cat.id}
                   className="px-4 py-2 rounded-xl text-xs sm:text-sm font-display font-semibold transition-all duration-300 flex items-center gap-2"
                   style={{
-                    backgroundColor: selectedCategory === cat.id ? "rgba(0, 245, 255, 0.12)" : "rgba(15, 15, 40, 0.4)",
-                    borderColor: selectedCategory === cat.id ? "#00F5FF" : "rgba(0, 245, 255, 0.08)",
+                    backgroundColor: selectedCategory === cat.id ? "rgba(213, 138, 155, 0.12)" : "rgba(23, 27, 39, 0.4)",
+                    borderColor: selectedCategory === cat.id ? "#D58A9B" : "rgba(213, 138, 155, 0.08)",
                     borderWidth: "1px",
                     color: selectedCategory === cat.id ? "#FFFFFF" : "#94A3B8",
-                    boxShadow: selectedCategory === cat.id ? "0 0 15px rgba(0, 245, 255, 0.15)" : "none",
+                    boxShadow: selectedCategory === cat.id ? "0 0 15px rgba(213, 138, 155, 0.15)" : "none",
                   }}
                 >
                   <span>{cat.label}</span>
@@ -626,9 +606,9 @@ export default function ERPShowcase() {
               const IconComp = item.icon;
               return (
                 <ScrollReveal key={item.id} delay={index * 0.03}>
-                  <div className="h-full p-5 rounded-2xl holo-card-static border border-neon-cyan/8 bg-space-surface/50 backdrop-blur-md flex flex-col justify-between group hover:border-neon-cyan/25 transition-all duration-300">
+                  <article className="h-full p-5 rounded-2xl holo-card-static border border-neon-cyan/8 bg-space-surface/50 flex flex-col justify-between group hover:border-neon-cyan/25 transition-all duration-300">
                     <div>
-                      {/* Top Row: Emoji + Icon + Route tag */}
+                      {/* Top Row: Emoji + Icon + category */}
                       <div className="flex items-center justify-between mb-3.5">
                         <div className="flex items-center gap-2.5">
                           <span className="text-xl leading-none">{item.emoji}</span>
@@ -637,7 +617,7 @@ export default function ERPShowcase() {
                           </div>
                         </div>
                         <span className="text-[10px] font-mono px-2.5 py-1 rounded-md bg-space-void/80 text-neon-cyan border border-neon-cyan/20 font-medium">
-                          {item.route}
+                          {moduleCategories.find((category) => category.id === item.category)?.label}
                         </span>
                       </div>
 
@@ -647,16 +627,21 @@ export default function ERPShowcase() {
                       </h4>
 
                       {/* Features / Breakdown */}
-                      <p className="text-xs text-slate-400 leading-relaxed">
-                        {item.desc}
-                      </p>
+                      <p id={`module-desc-${item.id}`} hidden={selectedModule !== item.id} className="text-xs text-slate-400 leading-relaxed">{item.desc}</p>
+                      {selectedModule !== item.id && <p className="text-xs text-slate-500 leading-relaxed">Select to explore this module</p>}
                     </div>
 
-                    <div className="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-[11px] font-mono text-slate-500 group-hover:text-slate-300">
-                      <span>Module Ready</span>
-                      <ArrowRight size={12} className="text-neon-cyan opacity-0 group-hover:opacity-100 transform -translate-x-1 group-hover:translate-x-0 transition-all" />
-                    </div>
-                  </div>
+                    <button
+                      type="button"
+                      aria-expanded={selectedModule === item.id}
+                      aria-controls={`module-desc-${item.id}`}
+                      onClick={() => setSelectedModule(selectedModule === item.id ? null : item.id)}
+                      className="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-[11px] font-mono text-slate-400 group-hover:text-slate-200 focus-visible:outline-offset-4"
+                    >
+                      <span>{selectedModule === item.id ? "Hide details" : `Explore ${item.name}`}</span>
+                      <ArrowRight size={12} className="text-neon-cyan group-hover:translate-x-1 transition-transform" />
+                    </button>
+                  </article>
                 </ScrollReveal>
               );
             })}

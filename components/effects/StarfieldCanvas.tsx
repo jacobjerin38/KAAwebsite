@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useRef, useCallback } from "react";
+import { useEffect, useRef, useCallback, useState } from "react";
 
 interface Particle {
   x: number;
@@ -17,9 +17,18 @@ export default function StarfieldCanvas() {
   const particlesRef = useRef<Particle[]>([]);
   const animRef = useRef<number>(0);
   const lastFrameRef = useRef(0);
+  const [enabled, setEnabled] = useState(false);
+
+  useEffect(() => {
+    // Only enable on desktop/non-touch devices to prevent iOS WebKit memory crashes
+    const isMobile = window.innerWidth < 768 || ("ontouchstart" in window && window.innerWidth < 1024);
+    if (!isMobile) {
+      setEnabled(true);
+    }
+  }, []);
 
   const initParticles = useCallback((w: number, h: number) => {
-    const count = window.innerWidth < 768 ? 36 : 120;
+    const count = 100;
     const particles: Particle[] = [];
     for (let i = 0; i < count; i++) {
       particles.push({
@@ -36,6 +45,7 @@ export default function StarfieldCanvas() {
   }, []);
 
   useEffect(() => {
+    if (!enabled) return;
     const canvas = canvasRef.current;
     if (!canvas) return;
 
@@ -51,21 +61,20 @@ export default function StarfieldCanvas() {
     };
 
     resize();
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (prefersReducedMotion) {
+      return () => window.removeEventListener("resize", resize);
+    }
     window.addEventListener("resize", resize);
 
     const onMouseMove = (e: MouseEvent) => {
       mouseRef.current = { x: e.clientX, y: e.clientY };
     };
-    const isMobile = window.matchMedia("(max-width: 767px)").matches;
-    if (!isMobile) window.addEventListener("mousemove", onMouseMove);
+    window.addEventListener("mousemove", onMouseMove);
 
     const animate = (timestamp: number) => {
       if (!ctx || !canvas) return;
       if (document.hidden) return;
-      if (isMobile && timestamp - lastFrameRef.current < 1000 / 30) {
-        animRef.current = requestAnimationFrame(animate);
-        return;
-      }
       lastFrameRef.current = timestamp;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -74,15 +83,13 @@ export default function StarfieldCanvas() {
 
       particlesRef.current.forEach((p) => {
         // Mouse parallax influence
-        if (!isMobile) {
-          const dx = mx - p.x;
-          const dy = my - p.y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist < 200) {
-            const force = (200 - dist) / 200 * 0.02;
-            p.vx -= dx * force * 0.01;
-            p.vy -= dy * force * 0.01;
-          }
+        const dx = mx - p.x;
+        const dy = my - p.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < 200) {
+          const force = (200 - dist) / 200 * 0.02;
+          p.vx -= dx * force * 0.01;
+          p.vy -= dy * force * 0.01;
         }
 
         p.x += p.vx;
@@ -144,10 +151,12 @@ export default function StarfieldCanvas() {
     return () => {
       cancelAnimationFrame(animRef.current);
       window.removeEventListener("resize", resize);
-      if (!isMobile) window.removeEventListener("mousemove", onMouseMove);
+      window.removeEventListener("mousemove", onMouseMove);
       document.removeEventListener("visibilitychange", onVisibilityChange);
     };
-  }, [initParticles]);
+  }, [initParticles, enabled]);
+
+  if (!enabled) return null;
 
   return (
     <canvas

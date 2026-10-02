@@ -6,15 +6,23 @@ import ScrollReveal from "@/components/ui/ScrollReveal";
 
 export default function Contact() {
   const [formData, setFormData] = useState({ name: "", email: "", phone: "", subject: "", message: "" });
-  const [submitted, setSubmitted] = useState(false);
+  const [draftOpened, setDraftOpened] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 4000);
+    const subject = formData.subject.trim() || `Website enquiry from ${formData.name.trim()}`;
+    const body = [
+      `Name: ${formData.name.trim()}`,
+      `Email: ${formData.email.trim()}`,
+      `Phone: ${formData.phone.trim() || "Not provided"}`,
+      "",
+      formData.message.trim(),
+    ].join("\n");
+    window.location.href = `mailto:info@kaatechnologies.qa?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    setDraftOpened(true);
   };
 
-  const inputClasses = "w-full px-4 py-3 bg-space-surface border border-neon-cyan/8 rounded-xl text-white placeholder-slate-600 focus:outline-none focus:border-neon-cyan/40 focus:ring-1 focus:ring-neon-cyan/20 focus:shadow-[0_0_15px_rgba(0,245,255,0.05)] transition-all duration-300 font-sans";
+  const inputClasses = "w-full px-4 py-3 bg-space-surface border border-neon-cyan/8 rounded-xl text-white placeholder-slate-600 focus:outline-none focus:border-neon-cyan/40 focus:ring-1 focus:ring-neon-cyan/20 focus:shadow-[0_0_15px_rgba(213,138,155,0.05)] transition-all duration-300 font-sans";
   const labelClasses = "block text-xs font-mono mb-2 text-slate-500 uppercase tracking-wider";
 
   return (
@@ -84,44 +92,37 @@ export default function Contact() {
               <motion.div className="p-8 sm:p-10 rounded-[2rem] holo-card relative overflow-hidden scan-lines">
                 <div className="absolute inset-0 bg-gradient-to-br from-neon-cyan/[0.03] to-neon-purple/[0.03]" />
 
-                {submitted ? (
-                  <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="text-center py-20 relative z-10">
-                    <div className="w-20 h-20 mx-auto bg-neon-cyan/10 rounded-full flex items-center justify-center mb-6 neon-glow-cyan">
-                      <span className="text-4xl">✅</span>
-                    </div>
-                    <h3 className="font-display font-bold text-2xl mb-2 text-white">Message Sent!</h3>
-                    <p className="text-slate-400">We&apos;ll get back to you within 24 hours.</p>
-                  </motion.div>
-                ) : (
+                <>
                   <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                       <div>
-                        <label className={labelClasses}>Full Name *</label>
-                        <input type="text" required placeholder="John Doe" className={inputClasses} value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} />
+                        <label htmlFor="contact-name" className={labelClasses}>Full Name *</label>
+                        <input id="contact-name" name="name" autoComplete="name" type="text" required placeholder="Your name" className={inputClasses} value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} />
                       </div>
                       <div>
-                        <label className={labelClasses}>Email *</label>
-                        <input type="email" required placeholder="john@company.com" className={inputClasses} value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} />
+                        <label htmlFor="contact-email" className={labelClasses}>Email *</label>
+                        <input id="contact-email" name="email" autoComplete="email" type="email" required placeholder="you@company.com" className={inputClasses} value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} />
                       </div>
                     </div>
                     <div>
-                      <label className={labelClasses}>Phone</label>
-                      <input type="tel" placeholder="+974 5571 1741" className={inputClasses} value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })} />
+                      <label htmlFor="contact-phone" className={labelClasses}>Phone</label>
+                      <input id="contact-phone" name="phone" autoComplete="tel" type="tel" placeholder="Your phone number" className={inputClasses} value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })} />
                     </div>
                     <div>
-                      <label className={labelClasses}>Subject</label>
-                      <input type="text" placeholder="How can we help you?" className={inputClasses} value={formData.subject} onChange={(e) => setFormData({ ...formData, subject: e.target.value })} />
+                      <label htmlFor="contact-subject" className={labelClasses}>Subject</label>
+                      <input id="contact-subject" name="subject" type="text" placeholder="How can we help?" className={inputClasses} value={formData.subject} onChange={(e) => setFormData({ ...formData, subject: e.target.value })} />
                     </div>
                     <div>
-                      <label className={labelClasses}>Message *</label>
-                      <textarea required rows={5} placeholder="Tell us about your project..." className={`${inputClasses} resize-none`} value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })} />
+                      <label htmlFor="contact-message" className={labelClasses}>Message *</label>
+                      <textarea id="contact-message" name="message" required rows={5} placeholder="Tell us what you need..." className={`${inputClasses} resize-y`} value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })} />
                     </div>
                     <button type="submit" className="btn-neon w-full justify-center py-4 text-base">
                       <span><Send size={18} /></span>
-                      <span>Send Message</span>
+                      <span>Open Email Draft</span>
                     </button>
                   </form>
-                )}
+                  {draftOpened && <p className="relative z-10 mt-4 text-sm text-slate-300" role="status">Your email app should open with your message ready. If it didn&apos;t, email <a className="underline underline-offset-4 text-neon-cyan" href="mailto:info@kaatechnologies.qa">info@kaatechnologies.qa</a>.</p>}
+                </>
               </motion.div>
             </ScrollReveal>
           </div>
