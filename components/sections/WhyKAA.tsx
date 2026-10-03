@@ -62,9 +62,9 @@ export default function WhyKAA() {
     <section id="why-kaa" className="section-padding relative overflow-hidden">
       {/* Decorative background */}
       <div className="absolute inset-0 pointer-events-none">
-        <div style={{ background: "radial-gradient(ellipse at 80% 20%, rgba(183,110,130,0.07) 0%, transparent 60%)" }}
+        <div style={{ background: "radial-gradient(ellipse at 80% 20%, rgba(139,92,246,0.07) 0%, transparent 60%)" }}
           className="absolute inset-0" />
-        <div style={{ background: "radial-gradient(ellipse at 20% 80%, rgba(197,109,130,0.06) 0%, transparent 60%)" }}
+        <div style={{ background: "radial-gradient(ellipse at 20% 80%, rgba(59,130,246,0.06) 0%, transparent 60%)" }}
           className="absolute inset-0" />
       </div>
 
@@ -117,7 +117,7 @@ export default function WhyKAA() {
         <ScrollReveal delay={0.3}>
           <div className="mt-14 p-6 rounded-2xl flex flex-wrap gap-6 justify-around"
             style={{
-              background: "linear-gradient(135deg, rgba(197,109,130,0.06) 0%, rgba(183,110,130,0.06) 100%)",
+              background: "linear-gradient(135deg, rgba(59,130,246,0.06) 0%, rgba(139,92,246,0.06) 100%)",
               border: "1px solid rgba(255,255,255,0.07)",
             }}>
             {[
@@ -128,7 +128,7 @@ export default function WhyKAA() {
             ].map((s) => (
               <div key={s.label} className="text-center">
                 <div className="font-display font-black text-2xl md:text-3xl mb-1"
-                  style={{ background: "linear-gradient(135deg, #f8fafc, #D58A9B)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
+                  style={{ background: "linear-gradient(135deg, #f8fafc, #60a5fa)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
                   {s.val}
                 </div>
                 <div className="text-xs" style={{ color: "#64748b" }}>{s.label}</div>

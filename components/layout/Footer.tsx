@@ -45,7 +45,7 @@ export default function Footer() {
               <div className="relative h-12 w-48 transition-all duration-300 group-hover:scale-[1.03]">
                 <Image src="/kaa-logo.png" alt="KAA Software and Technologies" fill
                   style={{ objectFit: "contain", objectPosition: "left center" }}
-                  className="brightness-0 invert opacity-80 transition-all duration-300 drop-shadow-[0_0_8px_rgba(213,138,155,0.2)] group-hover:opacity-100 group-hover:drop-shadow-[0_0_16px_rgba(213,138,155,0.5)]" />
+                  className="brightness-0 invert opacity-80 transition-all duration-300 drop-shadow-[0_0_8px_rgba(0,245,255,0.2)] group-hover:opacity-100 group-hover:drop-shadow-[0_0_16px_rgba(0,245,255,0.5)]" />
               </div>
             </a>
             <p className="text-sm leading-relaxed mb-8 max-w-sm text-slate-500">
@@ -92,7 +92,7 @@ export default function Footer() {
               ))}
               <li className="pt-4">
                 <a href="mailto:info@kaatechnologies.qa"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-display font-semibold text-white transition-all duration-300 bg-neon-cyan/[0.06] hover:bg-neon-cyan/15 border border-neon-cyan/10 hover:border-neon-cyan/25 hover:shadow-[0_8px_24px_rgba(213,138,155,0.1)]">
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-display font-semibold text-white transition-all duration-300 bg-neon-cyan/[0.06] hover:bg-neon-cyan/15 border border-neon-cyan/10 hover:border-neon-cyan/25 hover:shadow-[0_8px_24px_rgba(0,245,255,0.1)]">
                   <Mail size={14} /> Send Email
                 </a>
               </li>

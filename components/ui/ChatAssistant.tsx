@@ -92,7 +92,7 @@ export default function ChatAssistant() {
 
           <p className="mt-4 text-xs leading-relaxed text-slate-400">For anything else, our team can help.</p>
           <div className="mt-3 flex gap-2">
-            <a href="#contact" onClick={() => setOpen(false)} className="flex-1 rounded-lg bg-brand-wine px-3 py-2.5 text-center text-xs font-semibold text-white hover:brightness-110">Talk to a Human</a>
+            <a href="#contact" onClick={() => setOpen(false)} className="flex-1 rounded-lg bg-neon-magenta px-3 py-2.5 text-center text-xs font-semibold text-white hover:brightness-110">Talk to a Human</a>
             <a href="https://wa.me/97455711741" target="_blank" rel="noopener noreferrer" className="flex-1 rounded-lg border border-neon-cyan/25 px-3 py-2.5 text-center text-xs font-semibold text-neon-cyan hover:bg-neon-cyan/10">WhatsApp Us</a>
           </div>
         </section>
@@ -105,7 +105,7 @@ export default function ChatAssistant() {
         aria-haspopup="dialog"
         aria-controls={open ? "kaa-chat-panel" : undefined}
         onClick={() => setOpen((current) => !current)}
-        className="kaa-chat-trigger inline-flex min-h-12 items-center gap-2 rounded-full bg-brand-wine px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-black/30 transition-transform hover:-translate-y-0.5 focus-visible:outline"
+        className="kaa-chat-trigger inline-flex min-h-12 items-center gap-2 rounded-full bg-neon-magenta px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-black/30 transition-transform hover:-translate-y-0.5 focus-visible:outline"
       >
         <MessageCircle size={18} aria-hidden="true" />
         <span>{open ? "Close" : "Ask KAA"}</span>

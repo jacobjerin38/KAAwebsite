@@ -36,7 +36,7 @@ export default function Testimonials() {
         <ScrollReveal delay={0.15}>
           <motion.div
             className="max-w-2xl mx-auto rounded-[2rem] border border-neon-cyan/12 bg-neon-cyan/[0.02] backdrop-blur-sm p-12 text-center relative overflow-hidden"
-            whileHover={{ borderColor: "rgba(213,138,155,0.25)", boxShadow: "0 0 50px rgba(213,138,155,0.06)" }}
+            whileHover={{ borderColor: "rgba(0,245,255,0.25)", boxShadow: "0 0 50px rgba(0,245,255,0.06)" }}
             transition={{ duration: 0.4 }}
           >
             {/* Animated glow orb */}

@@ -7,7 +7,7 @@ const problems = [
   {
     id: 1,
     icon: TrendingUp,
-    accent: "#C56D82",
+    accent: "#FF006E",
     headline: "You're Scaling But Your Systems Aren't",
     points: ["More orders", "More teams", "More locations"],
     punchline: "Growth without the right system doesn't scale — it breaks. Your business has outgrown the old way.",
@@ -15,7 +15,7 @@ const problems = [
   {
     id: 2,
     icon: Users,
-    accent: "#B76E82",
+    accent: "#8B5CF6",
     headline: "Every Department Works In Its Own Bubble",
     points: [
       "Sales doesn't know what inventory has",
@@ -27,7 +27,7 @@ const problems = [
   {
     id: 3,
     icon: ClipboardList,
-    accent: "#D58A9B",
+    accent: "#00F5FF",
     headline: "Your Team Is Still Doing Reports Manually",
     points: ["Hours spent copy-pasting", "Cross-checking spreadsheets", "Sending files back and forth"],
     punchline: "That's not reporting. That's wasting your most valuable resource — time. Your team deserves better.",
@@ -35,7 +35,7 @@ const problems = [
   {
     id: 4,
     icon: Eye,
-    accent: "#CCB38F",
+    accent: "#39FF14",
     headline: "You Have Zero Real-Time Visibility",
     points: ["What's our stock right now?", "How much did we sell today?", "Where is that order?"],
     punchline: "If the answer is always 'Let me check and get back to you' — you're running blind.",
@@ -43,7 +43,7 @@ const problems = [
   {
     id: 5,
     icon: Database,
-    accent: "#C56D82",
+    accent: "#FF006E",
     headline: "Your Data Lives In 10 Different Places",
     points: ["Excel here", "WhatsApp there", "Register in account", "Another file on someone's laptop"],
     punchline: "When no one knows which number is right, your business is already losing. Sounds familiar?",

@@ -14,25 +14,18 @@ const config: Config = {
         mono: ["JetBrains Mono", "Consolas", "SFMono-Regular", "monospace"],
       },
       colors: {
-        brand: {
-          navy: "#0D111B",
-          wine: "#76243C",
-          rose: "#C56D82",
-          blush: "#D58A9B",
-          cream: "#F4EEE7",
-        },
         neon: {
-          cyan: "#D58A9B",
-          purple: "#B76E82",
-          magenta: "#C56D82",
-          green: "#CCB38F",
+          cyan: "#00F5FF",
+          purple: "#8B5CF6",
+          magenta: "#FF006E",
+          green: "#39FF14",
           pink: "#E91E63",
         },
         space: {
-          void: "#0D111B",
-          deep: "#151923",
-          surface: "#202431",
-          card: "rgba(23, 27, 39, 0.6)",
+          void: "#030014",
+          deep: "#0A0A1A",
+          surface: "#111128",
+          card: "rgba(15, 15, 40, 0.6)",
         },
       },
       animation: {
@@ -81,7 +74,7 @@ const config: Config = {
           "100%": { transform: "translateY(100%)" },
         },
         "blink-caret": {
-          "0%, 100%": { borderColor: "#D58A9B" },
+          "0%, 100%": { borderColor: "#00F5FF" },
           "50%": { borderColor: "transparent" },
         },
       },

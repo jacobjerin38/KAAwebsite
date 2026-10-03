@@ -13,7 +13,7 @@ interface HolographicCardProps {
 export default function HolographicCard({
   children,
   className = "",
-  glowColor = "213, 138, 155",
+  glowColor = "0, 245, 255",
   intensity = 1,
   disabled = false,
 }: HolographicCardProps) {
@@ -71,7 +71,7 @@ export default function HolographicCard({
       <div
         className="absolute inset-0 rounded-[inherit] opacity-0 hover:opacity-30 transition-opacity duration-700 pointer-events-none z-0"
         style={{
-          background: `linear-gradient(105deg, transparent 40%, rgba(${glowColor}, 0.06) 45%, rgba(183, 110, 130, 0.06) 50%, rgba(118, 36, 60, 0.06) 55%, transparent 60%)`,
+          background: `linear-gradient(105deg, transparent 40%, rgba(${glowColor}, 0.06) 45%, rgba(139, 92, 246, 0.06) 50%, rgba(255, 0, 110, 0.06) 55%, transparent 60%)`,
           transform: `translateX(${(glowX - 50) * 0.3}%)`,
         }}
       />

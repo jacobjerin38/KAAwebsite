@@ -8,19 +8,19 @@ import TypewriterText from "@/components/effects/TypewriterText";
 const portalCards = [
   {
     id: 0, num: "01", label: "Enterprise Systems & E-Commerce",
-    sub: "Doha Corporate HQ Team", image: "/hero-team.png", accent: "#C56D82",
+    sub: "Doha Corporate HQ Team", image: "/hero-team.png", accent: "#FF006E",
     icon: Layers,
     desc: "Bespoke ERP systems, Qatar WPS-compliant HRMS & payroll, and premium e-commerce setups for personal brands."
   },
   {
     id: 1, num: "02", label: "AI & Workflow Automation",
-    sub: "Kerala, India AI Lab", image: "/ai-automation.png", accent: "#B76E82",
+    sub: "Kerala, India AI Lab", image: "/ai-automation.png", accent: "#8B5CF6",
     icon: Cpu,
     desc: "Bespoke LLM integrations, robotic process automation pipelines, database syncs, and intelligent neural assistants."
   },
   {
     id: 2, num: "03", label: "Advanced Security Solutions",
-    sub: "Doha Security Operations", image: "/security-biometrics.png", accent: "#D58A9B",
+    sub: "Doha Security Operations", image: "/security-biometrics.png", accent: "#00F5FF",
     icon: ShieldCheck,
     desc: "Advanced biometric access control systems and enterprise network hardening solutions integrated natively into your ERP."
   }
@@ -55,15 +55,15 @@ export default function Hero() {
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div
           className="absolute top-0 left-0 w-[320px] sm:w-[550px] lg:w-[750px] h-[320px] sm:h-[550px] lg:h-[750px] rounded-full blur-3xl opacity-25"
-          style={{ background: "radial-gradient(circle, rgba(118,36,60,0.35) 0%, transparent 70%)" }}
+          style={{ background: "radial-gradient(circle, rgba(255,0,110,0.35) 0%, transparent 70%)" }}
         />
         <div
           className="absolute bottom-0 right-0 w-[320px] sm:w-[550px] lg:w-[750px] h-[320px] sm:h-[550px] lg:h-[750px] rounded-full blur-3xl opacity-20"
-          style={{ background: "radial-gradient(circle, rgba(183,110,130,0.3) 0%, transparent 70%)" }}
+          style={{ background: "radial-gradient(circle, rgba(139,92,246,0.3) 0%, transparent 70%)" }}
         />
         <div
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] sm:w-[450px] lg:w-[600px] h-[280px] sm:h-[450px] lg:h-[600px] rounded-full blur-3xl opacity-15"
-          style={{ background: "radial-gradient(circle, rgba(213,138,155,0.25) 0%, transparent 70%)" }}
+          style={{ background: "radial-gradient(circle, rgba(0,245,255,0.25) 0%, transparent 70%)" }}
         />
       </div>
 
@@ -133,16 +133,16 @@ export default function Hero() {
                     aria-pressed={isSelected}
                     className="flex items-center gap-4 p-3.5 rounded-2xl border text-left transition-all duration-300 backdrop-blur-md relative cursor-pointer group"
                     style={{
-                      backgroundColor: isSelected ? "rgba(213,138,155,0.03)" : "rgba(255,255,255,0.01)",
-                      borderColor: isSelected ? panel.accent : "rgba(213, 138, 155, 0.06)",
+                      backgroundColor: isSelected ? "rgba(0,245,255,0.03)" : "rgba(255,255,255,0.01)",
+                      borderColor: isSelected ? panel.accent : "rgba(0, 245, 255, 0.06)",
                       boxShadow: isSelected ? `0 4px 25px ${panel.accent}18, 0 0 15px ${panel.accent}08` : "none"
                     }}
                   >
                     <div
                       className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 border transition-all duration-300"
                       style={{
-                        backgroundColor: isSelected ? `${panel.accent}15` : "rgba(213,138,155,0.02)",
-                        borderColor: isSelected ? `${panel.accent}30` : "rgba(213,138,155,0.08)"
+                        backgroundColor: isSelected ? `${panel.accent}15` : "rgba(0,245,255,0.02)",
+                        borderColor: isSelected ? `${panel.accent}30` : "rgba(0,245,255,0.08)"
                       }}
                     >
                       <PanelIcon size={16} style={{ color: isSelected ? panel.accent : "#64748B" }} />
@@ -209,7 +209,7 @@ export default function Hero() {
                       scale: prefersReducedMotion ? (isSelected ? 1.02 : 0.94) : scaleVal,
                       x: prefersReducedMotion ? (isSelected ? 0 : translateX) : translateX,
                       zIndex,
-                      borderColor: isSelected ? panel.accent : "rgba(213, 138, 155, 0.08)",
+                      borderColor: isSelected ? panel.accent : "rgba(0, 245, 255, 0.08)",
                       boxShadow: isSelected
                         ? `0 20px 50px rgba(0,0,0,0.6), 0 0 30px ${panel.accent}20`
                         : "0 10px 30px rgba(0,0,0,0.5)"

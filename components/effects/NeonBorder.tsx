@@ -22,7 +22,7 @@ export default function NeonBorder({
       <div
         className="absolute -inset-[1px] rounded-[inherit] animate-border-rotate opacity-60"
         style={{
-          background: `conic-gradient(from var(--border-angle, 0deg), transparent 25%, #D58A9B 50%, #B76E82 75%, transparent 100%)`,
+          background: `conic-gradient(from var(--border-angle, 0deg), transparent 25%, #00F5FF 50%, #8B5CF6 75%, transparent 100%)`,
           borderRadius: "inherit",
         }}
       />
@@ -31,7 +31,7 @@ export default function NeonBorder({
       <div
         className="relative rounded-[inherit]"
         style={{
-          background: "linear-gradient(135deg, rgba(13, 17, 27, 0.95) 0%, rgba(32, 36, 49, 0.9) 100%)",
+          background: "linear-gradient(135deg, rgba(10, 10, 26, 0.95) 0%, rgba(17, 17, 40, 0.9) 100%)",
           borderRadius: "inherit",
         }}
       >

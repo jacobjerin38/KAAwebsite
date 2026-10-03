@@ -9,7 +9,7 @@ const pillars = [
     title: "Reliable & Secure",
     subtitle: "Enterprise-grade protection",
     points: ["Security-first architecture", "Data protection", "Secure cloud solutions"],
-    accent: "#C56D82",
+    accent: "#FF006E",
     description: "Every KAA system is built with security-first architecture. Your data stays protected, backed up, and compliant.",
   },
   {
@@ -17,7 +17,7 @@ const pillars = [
     title: "Built Around Your Workflow",
     subtitle: "Your process, not a template",
     points: ["Custom processes", "Workflow management", "Flexible operations"],
-    accent: "#B76E82",
+    accent: "#8B5CF6",
     description: "We map your actual business workflows — not force you into a generic template. Every module adapts to how you work.",
   },
   {
@@ -25,7 +25,7 @@ const pillars = [
     title: "Easy to Use",
     subtitle: "Adopted fast, loved faster",
     points: ["User-friendly UI", "Faster adoption", "Simple interface"],
-    accent: "#D58A9B",
+    accent: "#00F5FF",
     description: "Clean dashboards your team will actually use. No training marathons. Just intuitive tools that make sense on day one.",
   },
   {
@@ -33,7 +33,7 @@ const pillars = [
     title: "Team Collaboration",
     subtitle: "One platform, every department",
     points: ["Connected departments", "Role-based access", "Shared dashboards"],
-    accent: "#CCB38F",
+    accent: "#39FF14",
     description: "Sales, HR, Finance, and Operations — all connected in real time. No more silos, no more miscommunication.",
   },
   {
@@ -41,7 +41,7 @@ const pillars = [
     title: "Ready to Scale",
     subtitle: "Grows with your business",
     points: ["Built for growth", "Multi-location support", "Multi-device access"],
-    accent: "#A64D66",
+    accent: "#FF8C00",
     description: "Solutions designed to adapt as your business, teams, and locations grow.",
   },
 ];
@@ -173,10 +173,10 @@ export default function WhyChooseUs() {
 
             <div className="grid grid-cols-2 gap-4">
               {[
-                { icon: Shield, label: "Reliable & Secure", sub: "Security-first technology", accent: "#C56D82" },
-                { icon: TrendingUp, label: "Ready to Scale", sub: "Designed around your growth", accent: "#D58A9B" },
-                { icon: Users, label: "Connected Teams", sub: "One platform across departments", accent: "#B76E82" },
-                { icon: MessageCircle, label: "24/7 IT Support", sub: "Support for systems and infrastructure", accent: "#CCB38F" },
+                { icon: Shield, label: "Reliable & Secure", sub: "Security-first technology", accent: "#FF006E" },
+                { icon: TrendingUp, label: "Ready to Scale", sub: "Designed around your growth", accent: "#00F5FF" },
+                { icon: Users, label: "Connected Teams", sub: "One platform across departments", accent: "#8B5CF6" },
+                { icon: MessageCircle, label: "24/7 IT Support", sub: "Support for systems and infrastructure", accent: "#39FF14" },
               ].map((item) => {
                 const ItemIcon = item.icon;
                 return (

@@ -22,7 +22,7 @@ export default function Contact() {
     setDraftOpened(true);
   };
 
-  const inputClasses = "w-full px-4 py-3 bg-space-surface border border-neon-cyan/8 rounded-xl text-white placeholder-slate-600 focus:outline-none focus:border-neon-cyan/40 focus:ring-1 focus:ring-neon-cyan/20 focus:shadow-[0_0_15px_rgba(213,138,155,0.05)] transition-all duration-300 font-sans";
+  const inputClasses = "w-full px-4 py-3 bg-space-surface border border-neon-cyan/8 rounded-xl text-white placeholder-slate-600 focus:outline-none focus:border-neon-cyan/40 focus:ring-1 focus:ring-neon-cyan/20 focus:shadow-[0_0_15px_rgba(0,245,255,0.05)] transition-all duration-300 font-sans";
   const labelClasses = "block text-xs font-mono mb-2 text-slate-500 uppercase tracking-wider";
 
   return (

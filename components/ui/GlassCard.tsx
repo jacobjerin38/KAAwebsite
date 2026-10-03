@@ -16,8 +16,8 @@ export default function GlassCard({
   hover = true,
 }: GlassCardProps) {
   const glowMap = {
-    blue: "hover:shadow-[0_0_0_1px_rgba(197,109,130,0.3),0_0_30px_rgba(197,109,130,0.15)]",
-    purple: "hover:shadow-[0_0_0_1px_rgba(183,110,130,0.3),0_0_30px_rgba(183,110,130,0.15)]",
+    blue: "hover:shadow-[0_0_0_1px_rgba(59,130,246,0.3),0_0_30px_rgba(59,130,246,0.15)]",
+    purple: "hover:shadow-[0_0_0_1px_rgba(139,92,246,0.3),0_0_30px_rgba(139,92,246,0.15)]",
     cyan: "hover:shadow-[0_0_0_1px_rgba(6,182,212,0.3),0_0_30px_rgba(6,182,212,0.15)]",
     none: "",
   };

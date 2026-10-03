@@ -50,7 +50,7 @@ export default function Process() {
                       viewport={{ once: true }}
                       transition={{ delay: 0.2 }}
                       className="w-4 h-4 rounded-full bg-neon-cyan border-2 border-space-deep"
-                      style={{ boxShadow: "0 0 12px rgba(213,138,155,0.5), 0 0 24px rgba(213,138,155,0.2)" }}
+                      style={{ boxShadow: "0 0 12px rgba(0,245,255,0.5), 0 0 24px rgba(0,245,255,0.2)" }}
                     />
                   </div>
 

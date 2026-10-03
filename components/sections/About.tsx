@@ -43,7 +43,7 @@ export default function About() {
             </ScrollReveal>
 
             <ScrollReveal delay={0.18}>
-              <div className="p-5 rounded-2xl mb-6 border" style={{ background: "rgba(118,36,60,0.04)", borderColor: "rgba(118,36,60,0.12)" }}>
+              <div className="p-5 rounded-2xl mb-6 border" style={{ background: "rgba(255,0,110,0.04)", borderColor: "rgba(255,0,110,0.12)" }}>
                 <p className="text-xs font-mono font-semibold uppercase tracking-widest text-neon-magenta mb-2">We Don&apos;t Just Sell Software</p>
                 <p className="text-white font-display font-semibold text-base mb-1">Your Growth. Our Purpose.</p>
                 <p className="text-slate-400 text-sm leading-relaxed">
@@ -63,7 +63,7 @@ export default function About() {
 
             <ScrollReveal delay={0.3}>
               <div className="grid sm:grid-cols-2 gap-4 mb-10">
-                <HolographicCard glowColor="197, 109, 130" className="p-5">
+                <HolographicCard glowColor="255, 0, 110" className="p-5">
                   <div className="flex items-center gap-3 mb-3">
                     <div className="w-8 h-8 rounded-lg bg-neon-magenta/10 flex items-center justify-center border border-neon-magenta/20">
                       <MapPin size={16} className="text-neon-magenta" />
@@ -76,7 +76,7 @@ export default function About() {
                   </p>
                 </HolographicCard>
 
-                <HolographicCard glowColor="183, 110, 130" className="p-5">
+                <HolographicCard glowColor="139, 92, 246" className="p-5">
                   <div className="flex items-center gap-3 mb-3">
                     <div className="w-8 h-8 rounded-lg bg-neon-purple/10 flex items-center justify-center border border-neon-purple/20">
                       <Terminal size={16} className="text-neon-purple" />

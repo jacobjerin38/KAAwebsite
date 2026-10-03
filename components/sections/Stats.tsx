@@ -13,7 +13,7 @@ const industries = [
 
 export default function Stats() {
   return (
-    <section id="stats" className="section-padding relative overflow-hidden bg-brand-cream brand-surface-light" aria-label="KAA technology principles">
+    <section id="stats" className="section-padding relative overflow-hidden bg-space-deep" aria-label="KAA technology principles">
       <div className="kaa-container relative z-10">
         <div className="grid md:grid-cols-3 gap-5 mb-16">
           {principles.map((principle, i) => (

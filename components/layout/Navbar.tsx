@@ -87,7 +87,7 @@ export default function Navbar() {
         transition={{ duration: 0.6, ease: [0.21, 0.47, 0.32, 0.98] }}
         className={`fixed left-0 right-0 z-50 transition-all duration-500 ${
           scrolled
-            ? "top-0 bg-space-void/80 backdrop-blur-xl border-b border-neon-cyan/5 shadow-[0_4px_30px_rgba(213,138,155,0.03)]"
+            ? "top-0 bg-space-void/80 backdrop-blur-xl border-b border-neon-cyan/5 shadow-[0_4px_30px_rgba(0,245,255,0.03)]"
             : "top-0 sm:top-6 bg-transparent"
         }`}
       >
@@ -111,7 +111,7 @@ export default function Navbar() {
                   alt="KAA Software and Technologies"
                   fill
                   style={{ objectFit: "contain", objectPosition: "left center" }}
-                  className="brightness-0 invert opacity-90 transition-all duration-300 drop-shadow-[0_0_8px_rgba(213,138,155,0.3)] group-hover:drop-shadow-[0_0_16px_rgba(213,138,155,0.6)]"
+                  className="brightness-0 invert opacity-90 transition-all duration-300 drop-shadow-[0_0_8px_rgba(0,245,255,0.3)] group-hover:drop-shadow-[0_0_16px_rgba(0,245,255,0.6)]"
                   priority
                 />
               </div>
@@ -125,7 +125,7 @@ export default function Navbar() {
                   onClick={() => scrollTo(link.href, link.label)}
                   className="relative px-4 py-2 text-sm font-medium transition-all duration-300 rounded-lg"
                   style={{
-                    color: activeLink === link.label ? "#D58A9B" : "rgba(226, 232, 240, 0.7)",
+                    color: activeLink === link.label ? "#00F5FF" : "rgba(226, 232, 240, 0.7)",
                   }}
                   onMouseEnter={(e) => {
                     if (activeLink !== link.label)
@@ -142,8 +142,8 @@ export default function Navbar() {
                       layoutId="nav-underline"
                       className="absolute bottom-0 left-4 right-4 h-[2px] rounded-full"
                       style={{
-                        background: "linear-gradient(90deg, #D58A9B, #B76E82)",
-                        boxShadow: "0 0 12px rgba(213,138,155,0.5)",
+                        background: "linear-gradient(90deg, #00F5FF, #8B5CF6)",
+                        boxShadow: "0 0 12px rgba(0,245,255,0.5)",
                       }}
                     />
                   )}
@@ -232,12 +232,12 @@ export default function Navbar() {
                   onClick={() => scrollTo(link.href, link.label)}
                   className="text-left px-4 py-4 rounded-xl text-lg font-display font-semibold transition-all duration-200"
                   style={{
-                    color: activeLink === link.label ? "#D58A9B" : "rgba(226, 232, 240, 0.7)",
+                    color: activeLink === link.label ? "#00F5FF" : "rgba(226, 232, 240, 0.7)",
                     borderLeft: activeLink === link.label
-                      ? "3px solid #D58A9B"
+                      ? "3px solid #00F5FF"
                       : "3px solid transparent",
                     background: activeLink === link.label
-                      ? "rgba(213, 138, 155, 0.03)"
+                      ? "rgba(0, 245, 255, 0.08)"
                       : "transparent",
                   }}
                 >

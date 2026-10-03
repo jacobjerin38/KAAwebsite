@@ -23,12 +23,12 @@ const tabs = [
 ];
 
 const modules = [
-  { icon: Users, label: "HRMS", color: "#D58A9B" },
-  { icon: DollarSign, label: "Payroll", color: "#B76E82" },
-  { icon: Briefcase, label: "CRM", color: "#D58A9B" },
-  { icon: ShoppingCart, label: "Sales", color: "#CCB38F" },
-  { icon: Package, label: "Inventory", color: "#C56D82" },
-  { icon: BarChart3, label: "Finance", color: "#B76E82" },
+  { icon: Users, label: "HRMS", color: "#00F5FF" },
+  { icon: DollarSign, label: "Payroll", color: "#8B5CF6" },
+  { icon: Briefcase, label: "CRM", color: "#00F5FF" },
+  { icon: ShoppingCart, label: "Sales", color: "#39FF14" },
+  { icon: Package, label: "Inventory", color: "#FF006E" },
+  { icon: BarChart3, label: "Finance", color: "#8B5CF6" },
 ];
 
 const benefits = [
@@ -54,123 +54,137 @@ const allModules = [
     icon: Building2,
     emoji: "🏢",
     name: "Organisation",
+    route: "/organisation",
     category: "hr",
     desc: "Structure, Masters, Roles, Workflows, Settings",
-    color: "#D58A9B"
+    color: "#00F5FF"
   },
   {
     id: "employees",
     icon: Users,
     emoji: "👥",
     name: "Employees",
+    route: "/employees",
     category: "hr",
     desc: "Directory, Profiles, Geolocation, Immigration",
-    color: "#B76E82"
+    color: "#8B5CF6"
   },
   {
     id: "attendance",
     icon: Clock,
     emoji: "⏱️",
     name: "Attendance",
+    route: "/attendance",
     category: "hr",
     desc: "Daily/Monthly Logs, Shifts, Duty Roster, OT Rules",
-    color: "#D58A9B"
+    color: "#00F5FF"
   },
   {
     id: "leave",
     icon: Calendar,
     emoji: "📅",
     name: "Leave",
+    route: "/leave",
     category: "hr",
     desc: "Leave Applications, Accruals, Balances, Calendar",
-    color: "#CCB38F"
+    color: "#39FF14"
   },
   {
     id: "payroll",
     icon: DollarSign,
     emoji: "💰",
     name: "Payroll",
+    route: "/payroll",
     category: "hr",
     desc: "Salary Runs, WPS Export, Payslips, Settlements",
-    color: "#B76E82"
+    color: "#8B5CF6"
   },
   {
     id: "essp",
     icon: UserCheck,
     emoji: "👤",
     name: "ESSP",
+    route: "/essp",
     category: "hr",
     desc: "Self-Service, Punch In/Out, Missed Punch, Approvals",
-    color: "#D58A9B"
+    color: "#00F5FF"
   },
   {
     id: "pro",
     icon: Shield,
     emoji: "🛡️",
     name: "PRO (Mandoob)",
+    route: "/pro",
     category: "hr",
     desc: "Govt Services, QID/Visa Renewals, Agent Tasks",
-    color: "#C56D82"
+    color: "#FF006E"
   },
   {
     id: "crm",
     icon: Target,
     emoji: "🤝",
     name: "CRM",
+    route: "/crm",
     category: "sales",
     desc: "Leads, Deals, Pipelines, Contacts, AI Finder",
-    color: "#C56D82"
+    color: "#FF006E"
   },
   {
     id: "sales",
     icon: ShoppingCart,
     emoji: "🛒",
     name: "Sales",
+    route: "/sales",
     category: "sales",
     desc: "Quotations, Sales Orders, Credit Limits, Invoices",
-    color: "#CCB38F"
+    color: "#39FF14"
   },
   {
     id: "accounting",
     icon: BookOpen,
     emoji: "🧮",
     name: "Accounting",
+    route: "/accounting",
     category: "finance",
     desc: "Chart of Accounts, Ledgers, Payments, Financial Reports",
-    color: "#B76E82"
+    color: "#8B5CF6"
   },
   {
     id: "inventory",
     icon: Package,
     emoji: "📦",
     name: "Inventory",
+    route: "/inventory",
     category: "finance",
     desc: "Item Master, Warehouses, Stock Ledger, Reservations",
-    color: "#CCB38F"
+    color: "#39FF14"
   },
   {
     id: "procurement",
     icon: ShoppingBag,
     emoji: "🛍️",
     name: "Procurement",
+    route: "/procurement",
     category: "finance",
     desc: "Requisitions, POs, GRNs, Vendor Bills",
-    color: "#D58A9B"
+    color: "#00F5FF"
   },
   {
     id: "manufacturing",
     icon: Factory,
     emoji: "🏭",
     name: "Manufacturing",
+    route: "/manufacturing",
     category: "finance",
     desc: "BOM, Work Centers, Production Orders",
-    color: "#C56D82"
+    color: "#FF006E"
   },
   {
     id: "projects",
     icon: FolderKanban,
     emoji: "📋",
     name: "Projects",
+    route: "/projects",
     category: "workspace",
     desc: "Task Boards, Milestones, Timesheets",
     color: "#EAB308"
@@ -180,51 +194,57 @@ const allModules = [
     icon: Headphones,
     emoji: "🎧",
     name: "Help Desk",
+    route: "/help_desk",
     category: "sales",
     desc: "Support Tickets, SLAs, Escalations",
-    color: "#D58A9B"
+    color: "#00F5FF"
   },
   {
     id: "marketing",
     icon: Megaphone,
     emoji: "📢",
     name: "Marketing",
+    route: "/marketing",
     category: "sales",
     desc: "Campaigns, Leads Automation, Analytics",
-    color: "#C56D82"
+    color: "#FF006E"
   },
   {
     id: "documents",
     icon: FileText,
     emoji: "📄",
     name: "Documents",
+    route: "/documents",
     category: "workspace",
     desc: "Policies, Contracts, Document Vault",
-    color: "#B76E82"
+    color: "#8B5CF6"
   },
   {
     id: "recruitment",
     icon: Briefcase,
     emoji: "💼",
     name: "Recruitment",
+    route: "/recruitment",
     category: "hr",
     desc: "ATS, Job Postings, Public Careers Portal (/careers)",
-    color: "#D58A9B"
+    color: "#00F5FF"
   },
   {
     id: "loans",
     icon: Coins,
     emoji: "💵",
     name: "Loans & Benefits",
+    route: "/loans",
     category: "hr",
     desc: "Advances, Loan Repayments, Claims",
-    color: "#CCB38F"
+    color: "#39FF14"
   },
   {
     id: "performance",
     icon: Trophy,
     emoji: "🏆",
     name: "Performance",
+    route: "/performance",
     category: "hr",
     desc: "Goals, OKRs, Appraisals",
     color: "#EAB308"
@@ -234,18 +254,20 @@ const allModules = [
     icon: Plane,
     emoji: "✈️",
     name: "Travel & Expenses",
+    route: "/travel",
     category: "finance",
     desc: "Trip Requests, Expense Claims, Receipts",
-    color: "#B76E82"
+    color: "#8B5CF6"
   },
   {
     id: "chat",
     icon: MessageSquare,
     emoji: "💬",
     name: "Team Chat",
+    route: "/chat",
     category: "workspace",
     desc: "Real-Time Direct & Channel Messaging",
-    color: "#D58A9B"
+    color: "#00F5FF"
   },
 ];
 
@@ -292,10 +314,10 @@ export default function ERPShowcase() {
                 aria-pressed={activeTab === tab.id}
                 className="px-5 py-2.5 rounded-xl text-sm font-display font-semibold transition-all duration-300 relative overflow-hidden"
                 style={{
-                  background: activeTab === tab.id ? "rgba(213,138,155,0.08)" : "rgba(213,138,155,0.02)",
-                  border: activeTab === tab.id ? "1px solid #D58A9B" : "1px solid rgba(213,138,155,0.06)",
+                  background: activeTab === tab.id ? "rgba(0,245,255,0.08)" : "rgba(0,245,255,0.02)",
+                  border: activeTab === tab.id ? "1px solid #00F5FF" : "1px solid rgba(0,245,255,0.06)",
                   color: activeTab === tab.id ? "#FFFFFF" : "#94A3B8",
-                  boxShadow: activeTab === tab.id ? "0 0 20px rgba(213,138,155,0.1)" : "none",
+                  boxShadow: activeTab === tab.id ? "0 0 20px rgba(0,245,255,0.1)" : "none",
                 }}
               >
                 {activeTab === tab.id && (
@@ -512,7 +534,7 @@ export default function ERPShowcase() {
                       </div>
                     ))}
                   </div>
-                  <div className="p-4 rounded-xl text-center" style={{ background: "linear-gradient(135deg, rgba(118,36,60,0.08) 0%, rgba(183,110,130,0.08) 100%)", border: "1px solid rgba(118,36,60,0.15)" }}>
+                  <div className="p-4 rounded-xl text-center" style={{ background: "linear-gradient(135deg, rgba(255,0,110,0.08) 0%, rgba(139,92,246,0.08) 100%)", border: "1px solid rgba(255,0,110,0.15)" }}>
                     <p className="font-display font-bold text-white tracking-wide">Plan it <span className="text-neon-magenta">|</span> Track it <span className="text-neon-magenta">|</span> Deliver it</p>
                   </div>
                 </motion.div>
@@ -586,11 +608,11 @@ export default function ERPShowcase() {
                   aria-pressed={selectedCategory === cat.id}
                   className="px-4 py-2 rounded-xl text-xs sm:text-sm font-display font-semibold transition-all duration-300 flex items-center gap-2"
                   style={{
-                    backgroundColor: selectedCategory === cat.id ? "rgba(213, 138, 155, 0.12)" : "rgba(23, 27, 39, 0.4)",
-                    borderColor: selectedCategory === cat.id ? "#D58A9B" : "rgba(213, 138, 155, 0.08)",
+                    backgroundColor: selectedCategory === cat.id ? "rgba(0, 245, 255, 0.12)" : "rgba(15, 15, 40, 0.4)",
+                    borderColor: selectedCategory === cat.id ? "#00F5FF" : "rgba(0, 245, 255, 0.08)",
                     borderWidth: "1px",
                     color: selectedCategory === cat.id ? "#FFFFFF" : "#94A3B8",
-                    boxShadow: selectedCategory === cat.id ? "0 0 15px rgba(213, 138, 155, 0.15)" : "none",
+                    boxShadow: selectedCategory === cat.id ? "0 0 15px rgba(0, 245, 255, 0.15)" : "none",
                   }}
                 >
                   <span>{cat.label}</span>

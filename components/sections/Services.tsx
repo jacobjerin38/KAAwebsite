@@ -12,7 +12,7 @@ const strategicVerticals = [
     title: "Enterprise ERP & Custom Web Platforms",
     subtitle: "Unified management systems & high-converting brand platforms",
     desc: "We construct bespoke business systems and gorgeous websites designed to scale. From Qatar WPS-compliant HRMS & payroll software to high-end e-commerce sites for personal brands and premium corporate platforms.",
-    accent: "#C56D82", image: "/kaa-screenshot.jpg",
+    accent: "#FF006E", image: "/kaa-screenshot.jpg",
     tags: ["Enterprise ERP", "WPS HRMS", "E-Commerce", "Personal Brands"],
     icon: Layers,
     bullets: ["Qatar WPS-Compliant HR & Automated Payroll", "Real-Time Inventory, Procurement & Ledger Hub", "Premium E-Commerce Platforms for Personal Brands", "Bespoke Corporate Web App Architecture"]
@@ -22,7 +22,7 @@ const strategicVerticals = [
     title: "Intelligent AI & Automated Workflows",
     subtitle: "Intelligent LLM agents, workflow engines, & robotic automation",
     desc: "Unleash the power of modern artificial intelligence and robotic process automation. We build custom LLM-powered AI assistants, automated pipeline workflows, intelligent predictive analytics, and seamless database integrations.",
-    accent: "#B76E82", image: "/ai-automation.png",
+    accent: "#8B5CF6", image: "/ai-automation.png",
     tags: ["LLM AI Agents", "RPA Workflows", "Predictive BI", "Smart DB Sync"],
     icon: Cpu,
     bullets: ["Bespoke LLM AI Assistants & Custom Chatbots", "Robotic Process Automation (RPA) Pipeline Workflows", "Intelligent Predictive Analytics & Real-Time Reporting", "Automated System Syncs & Third-Party Integrations"]
@@ -32,7 +32,7 @@ const strategicVerticals = [
     title: "Advanced Security Solutions",
     subtitle: "Biometric attendance controllers, firewall hardening, & secure network architecture",
     desc: "State-of-the-art security installations to protect and secure your corporate digital environment. We deploy secure biometric attendance/access controls and robust network security protocols, fully integrated with your business networks.",
-    accent: "#D58A9B", image: "/security-network.png",
+    accent: "#00F5FF", image: "/security-network.png",
     tags: ["Biometric Access", "Network Hardening", "Firewall Controls", "ERP Integration"],
     icon: ShieldCheck,
     bullets: ["Enterprise Biometric Access & Attendance System Integration", "Structural Network Hardening & Secure Storage Hubs", "Advanced Firewall Configuration & Threat Prevention", "Seamless Integration with Corporate ERP & HRMS"]
@@ -47,7 +47,7 @@ const foundationalPillars = [
     stat: "Security-first protection.",
     statSub: "One mistake shouldn’t cost you everything.",
     features: ["Firewall", "Anti-Virus", "Email Security", "Threat Detection", "Data Protection", "Secure Cloud"],
-    accent: "#C56D82",
+    accent: "#FF006E",
     isCyber: true,
   },
   {
@@ -57,7 +57,7 @@ const foundationalPillars = [
     stat: "24/7",
     statSub: "Always-on support",
     features: ["Network Management", "Cloud Migration", "Disaster Recovery", "IT Helpdesk", "Server Management", "Backup Systems"],
-    accent: "#D58A9B",
+    accent: "#00F5FF",
     isCyber: false,
   },
   {
@@ -67,7 +67,7 @@ const foundationalPillars = [
     stat: "360°",
     statSub: "Digital presence",
     features: ["SEO Strategy", "Brand Design", "Social Media", "Content Marketing", "PPC Campaigns", "Analytics"],
-    accent: "#B76E82",
+    accent: "#8B5CF6",
     isCyber: false,
   },
 ];
@@ -114,8 +114,8 @@ export default function Services() {
                   onClick={() => setActiveTab(idx)}
                   className="px-6 py-4 rounded-2xl text-xs sm:text-sm font-display font-semibold transition-all duration-300 relative flex items-center gap-3 overflow-hidden cursor-pointer"
                   style={{
-                    background: isSelected ? "rgba(213, 138, 155, 0.03)" : "rgba(213, 138, 155, 0.01)",
-                    border: isSelected ? `1px solid ${vertical.accent}` : "1px solid rgba(213, 138, 155, 0.06)",
+                    background: isSelected ? "rgba(0, 245, 255, 0.03)" : "rgba(0, 245, 255, 0.01)",
+                    border: isSelected ? `1px solid ${vertical.accent}` : "1px solid rgba(0, 245, 255, 0.06)",
                     color: isSelected ? "#FFFFFF" : "#94A3B8",
                     boxShadow: isSelected ? `0 0 20px ${vertical.accent}15` : "none"
                   }}
@@ -124,7 +124,7 @@ export default function Services() {
                   <span>{vertical.title.split(" & ")[0]}</span>
                   {isSelected && (
                     <motion.div layoutId="active-vertical-glow" className="absolute inset-0 -z-10 blur-sm"
-                      style={{ background: `linear-gradient(135deg, ${vertical.accent}12 0%, rgba(183,110,130,0.08) 100%)` }} />
+                      style={{ background: `linear-gradient(135deg, ${vertical.accent}12 0%, rgba(139,92,246,0.08) 100%)` }} />
                   )}
                 </button>
               );
@@ -178,8 +178,8 @@ export default function Services() {
 
               <div className="lg:col-span-6 relative flex justify-center items-center">
                 <div className="absolute inset-0 rounded-[2rem] opacity-25 blur-3xl pointer-events-none transform scale-95"
-                  style={{ background: `radial-gradient(circle, ${activeVertical.accent}30 0%, rgba(183,110,130,0.08) 70%)` }} />
-                <HolographicCard className="w-full max-w-[500px]" glowColor={activeVertical.accent.replace("#", "").match(/.{2}/g)?.map(h => parseInt(h, 16)).join(", ") || "213, 138, 155"}>
+                  style={{ background: `radial-gradient(circle, ${activeVertical.accent}30 0%, rgba(139,92,246,0.08) 70%)` }} />
+                <HolographicCard className="w-full max-w-[500px]" glowColor={activeVertical.accent.replace("#", "").match(/.{2}/g)?.map(h => parseInt(h, 16)).join(", ") || "0, 245, 255"}>
                   <div className="relative rounded-[20px] overflow-hidden aspect-[4/3] w-full bg-space-surface">
                     <Image src={activeVertical.image} alt={activeVertical.title} fill className="object-cover transition-transform duration-700 hover:scale-105" />
                     <div className="absolute inset-0 rounded-[20px] border border-neon-cyan/5 pointer-events-none z-20" />
